@@ -19,7 +19,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--white);
-    color: var(--dark-grey);
+    color: var(--light-blue);
 }
 
 a {
