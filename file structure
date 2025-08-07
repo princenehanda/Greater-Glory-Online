@@ -1,0 +1,27 @@
+.
+├── css
+│   └── style.css
+├── images
+│   ├── about-hero-bg.jpg
+│   ├── hero-1.jpg
+│   ├── hero-2.jpg
+│   ├── hero-3.jpg
+│   └── logo.png
+├── js
+│   └── script.js
+├── pages
+│   ├── about-us.html
+│   ├── cell-groups.html
+│   ├── give.html
+│   ├── ggm-near-me.html
+│   ├── media.html
+│   ├── miracle-hour.html
+│   ├── ministries.html
+│   ├── partner-with-us.html
+│   ├── pray-with-us.html
+│   ├── serve-with-us.html
+│   ├── upcoming-events.html
+│   └── what-to-expect.html
+└── index.html
+
+4 directories, 15 files
