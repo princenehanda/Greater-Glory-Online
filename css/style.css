@@ -281,6 +281,21 @@ ul {
     }
 }
 
+/* Add this to your main CSS file for mobile dropdowns */
+@media (max-width: 768px) {
+    .dropdown {
+        display: none; /* Keep the default hidden state */
+        position: static; /* Change position to static for mobile layout */
+        box-shadow: none; /* Remove box shadow for a cleaner look */
+        border-top: none; /* Remove the red border */
+        background-color: var(--light-grey); /* Change background for mobile */
+    }
+
+    .dropdown.show {
+        display: block; /* Show the dropdown when the 'show' class is added */
+    }
+}
+
 /* ======================================= */
 /* GGM Near Me Page Specific Styles      */
 /* ======================================= */
