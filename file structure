@@ -1,7 +1,7 @@
 .
 ├── css
 │   └── style.css
-├── images
+├── assets
 │   ├── about-hero-bg.jpg
 │   ├── hero-1.jpg
 │   ├── hero-2.jpg
