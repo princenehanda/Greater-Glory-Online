@@ -48,11 +48,29 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
 }
+/* Add this to your style.css file */
 
 .logo {
-    font-size: 1.5rem;
+    display: flex; /* Enables flexbox layout for side-by-side arrangement */
+    align-items: center; /* Vertically centers the items */
+    gap: 10px; /* Adds space between the image and the text */
+}
+
+.logo-text {
+    font-size: 1.5rem; /* Matches the original logo text size */
     font-weight: bold;
     color: var(--primary-blue);
+}
+
+/* You might want to adjust the size for mobile devices */
+@media (max-width: 768px) {
+    .logo img {
+        height: 40px; /* Smaller logo on mobile */
+    }
+
+    .logo-text {
+        font-size: 1.2rem; /* Smaller text on mobile */
+    }
 }
 
 .nav-links {
