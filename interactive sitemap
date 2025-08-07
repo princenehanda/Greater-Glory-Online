@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website File Structure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #002d62;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .file-tree {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .file-tree li {
+            position: relative;
+            padding: 5px 0 5px 25px;
+        }
+        
+        .file-tree a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.2s;
+        }
+
+        .file-tree a:hover {
+            color: #d20019;
+        }
+        
+        .file-tree .icon {
+            margin-right: 10px;
+            color: #555;
+            width: 15px; /* Fixed width for alignment */
+        }
+        
+        .file-tree .folder .icon {
+            color: #f1c40f;
+        }
+
+        .file-tree .file .icon {
+            color: #3498db;
+        }
+
+        .file-tree .sub-tree {
+            list-style: none;
+            padding-left: 25px;
+            border-left: 1px dashed #ccc;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Website File Structure</h1>
+        <p>Click on any of the links below to navigate to the page and verify that it's working correctly.</p>
+
+        <ul class="file-tree">
+            <li class="folder">
+                <i class="fas fa-folder icon"></i> <a href="#">root</a>
+                <ul class="sub-tree">
+                    <li class="file"><i class="fas fa-file-alt icon"></i> <a href="index.html">index.html</a></li>
+                    <li class="folder">
+                        <i class="fas fa-folder icon"></i> <a href="#">pages</a>
+                        <ul class="sub-tree">
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/ggm-near-me.html">ggm-near-me.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/what-to-expect.html">what-to-expect.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/upcoming-events.html">upcoming-events.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/about-us.html">about-us.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/cell-groups.html">cell-groups.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/pray-with-us.html">pray-with-us.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/miracle-hour.html">miracle-hour.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/serve-with-us.html">serve-with-us.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/partner-with-us.html">partner-with-us.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/ministries.html">ministries.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/media.html">media.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/give.html">give.html</a></li>
+                        </ul>
+                    </li>
+                    <li class="folder">
+                        <i class="fas fa-folder icon"></i> <a href="#">css</a>
+                        <ul class="sub-tree">
+                            <li class="file"><i class="fas fa-file-code icon"></i> <a href="css/style.css">style.css</a></li>
+                        </ul>
+                    </li>
+                    <li class="folder">
+                        <i class="fas fa-folder icon"></i> <a href="#">js</a>
+                        <ul class="sub-tree">
+                            <li class="file"><i class="fas fa-file-code icon"></i> <a href="js/script.js">script.js</a></li>
+                        </ul>
+                    </li>
+                    <li class="folder">
+                        <i class="fas fa-folder icon"></i> <a href="#">images</a>
+                        <ul class="sub-tree">
+                            <li class="file"><i class="fas fa-file-image icon"></i> <a href="#">[your images here]</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
