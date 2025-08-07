@@ -792,7 +792,7 @@ ul {
     gap: 2rem;
 }
 
-.zoom-card {
+.get-involved-card {
     display: block;
     padding: 2rem;
     background-color: var(--light-grey);
@@ -802,22 +802,27 @@ ul {
     text-align: center;
 }
 
-.zoom-card:hover {
+.get-involved-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-.zoom-card h3 {
+.get-involved-card h3 {
     font-size: 1.5rem;
     color: var(--primary-blue);
     margin-bottom: 0.5rem;
 }
 
-.zoom-card p {
+.get-involved-card p {
     color: #666;
     font-size: 1rem;
 }
 
+.get-involved-card .card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-red);
+}
 
 /* Mobile responsiveness for all pages */
 @media (max-width: 768px) {
