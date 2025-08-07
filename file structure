@@ -3,9 +3,9 @@
 │   └── style.css
 ├── assets
 │   ├── about-hero-bg.jpg
-│   ├── hero-1.jpg
-│   ├── hero-2.jpg
-│   ├── hero-3.jpg
+│   ├── hero-1.jpeg
+│   ├── hero-2.jpeg
+│   ├── hero-3.jpeg
 │   └── logo.png
 ├── js
 │   └── script.js
