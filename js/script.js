@@ -1,75 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Hero Slideshow
+    // --- Hero Slideshow ---
     const slides = document.querySelectorAll('.hero-slider .slide');
-    let currentSlide = 0;
+    if (slides.length > 0) { // Check if slides exist
+        let currentSlide = 0;
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
-            }
-        });
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        showSlide(currentSlide); // Show the first slide initially
     }
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
 
-    setInterval(nextSlide, 5000); // Change slide every 5 seconds
-
-    // Mobile Navigation
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Dropdown functionality for mobile
-    const dropdowns = document.querySelectorAll('.has-dropdown');
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('a');
-        link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const dropdownMenu = dropdown.querySelector('.dropdown');
-                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-            }
-        });
-    });
-
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+    // --- Mobile Navigation & Dropdowns ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger && navLinks) {
+        // Toggle the hamburger and nav menu
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
     }
 
-    // This part is for handling dropdowns on mobile.
-    // It prevents the dropdown from being "hidden" on hover, which doesn't work on mobile.
-    const hasDropdowns = document.querySelectorAll('.has-dropdown > a');
-    hasDropdowns.forEach(link => {
+    // Handle mobile dropdowns
+    const dropdownToggles = document.querySelectorAll('.has-dropdown > a');
+    dropdownToggles.forEach(link => {
         link.addEventListener('click', (e) => {
-            // Check if the screen is mobile-sized
+            // Check if on a mobile-sized screen
             if (window.innerWidth <= 768) {
-                // Prevent the link from navigating
-                e.preventDefault();
-                // Find the dropdown and toggle its visibility
+                e.preventDefault(); // Prevent page navigation
                 const dropdown = link.nextElementSibling;
-                if (dropdown) {
-                    // Toggle the 'show' class
+                if (dropdown && dropdown.classList.contains('dropdown')) {
                     dropdown.classList.toggle('show');
                 }
             }
         });
     });
+
 });
