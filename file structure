@@ -10,17 +10,17 @@
 ├── js
 │   └── script.js
 ├── pages
-│   ├── about-us.html
-│   ├── cell-groups.html
+│   ├── about.html
+│   ├── cell.html
 │   ├── give.html
 │   ├── ggm-near-me.html
 │   ├── media.html
-│   ├── miracle-hour.html
+│   ├── miracle.html
 │   ├── ministries.html
-│   ├── partner-with-us.html
-│   ├── pray-with-us.html
-│   ├── serve-with-us.html
-│   ├── upcoming-events.html
+│   ├── partner.html
+│   ├── pwpi.html
+│   ├── serve.html
+│   ├── upcoming.html
 │   └── what-to-expect.html
 └── index.html
 
