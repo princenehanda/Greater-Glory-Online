@@ -150,8 +150,9 @@ ul {
     opacity: 1;
 }
 
-.slide1 { background-image: url('../images/hero-1.jpg'); }
-.slide2 { background-image: url('../images/hero-2.jpg'); }
+.slide1 { background-image: url('../assets/hero-1.jpg'); }
+.slide2 { background-image: url('../assets/hero-2.jpg'); }
+.slide3 { background-image: url('../assets/hero-3.jpg'); }
 
 .overlay {
     background-color: rgba(0, 0, 0, 0.5);
