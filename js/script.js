@@ -42,3 +42,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
+
+    // This part is for handling dropdowns on mobile.
+    // It prevents the dropdown from being "hidden" on hover, which doesn't work on mobile.
+    const hasDropdowns = document.querySelectorAll('.has-dropdown > a');
+    hasDropdowns.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Check if the screen is mobile-sized
+            if (window.innerWidth <= 768) {
+                // Prevent the link from navigating
+                e.preventDefault();
+                // Find the dropdown and toggle its visibility
+                const dropdown = link.nextElementSibling;
+                if (dropdown) {
+                    // Toggle the 'show' class
+                    dropdown.classList.toggle('show');
+                }
+            }
+        });
+    });
+});
