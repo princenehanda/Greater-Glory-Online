@@ -56,6 +56,10 @@ ul {
     gap: 10px; /* Adds space between the image and the text */
 }
 
+.logo img {
+    height: 90px; /* Or whatever size you want for desktop */
+}
+
 .logo-text {
     font-size: 1.5rem; /* Matches the original logo text size */
     font-weight: bold;
@@ -65,10 +69,10 @@ ul {
 /* You might want to adjust the size for mobile devices */
 @media (max-width: 768px) {
     .logo img {
-        height: 40px; /* Smaller logo on mobile */
+        height: 50px; /* Smaller logo on mobile */
     }
-
-    .logo-text {
+    
+  .logo-text {
         font-size: 1.2rem; /* Smaller text on mobile */
     }
 }
