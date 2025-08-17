@@ -88,13 +88,13 @@
                         <ul class="sub-tree">
                             <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/ggm-near-me.html">ggm-near-me.html</a></li>
                             <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/what-to-expect.html">what-to-expect.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/upcoming-events.html">upcoming-events.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/about-us.html">about-us.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/cell-groups.html">cell-groups.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/pray-with-us.html">pray-with-us.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/miracle-hour.html">miracle-hour.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/serve-with-us.html">serve-with-us.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/partner-with-us.html">partner-with-us.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/upcoming.html">upcoming.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/about.html">About-us.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/cell.html">cell-groups.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/pwpi.html">pray-with-us.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/miracle.html">miracle-hour.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/serve.html">serve-with-us.html</a></li>
+                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/partner.html">partner-with-us.html</a></li>
                             <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/ministries.html">ministries.html</a></li>
                             <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/media.html">media.html</a></li>
                             <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/give.html">give.html</a></li>
