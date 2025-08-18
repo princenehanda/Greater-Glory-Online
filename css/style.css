@@ -33,7 +33,7 @@ ul {
 
 /* Header & Navigation */
 .header {
-    background-color: var(--white);
+    background-color: rgba(230, 240, 255, 0.85);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -81,7 +81,7 @@ ul {
 }
 
 .nav-item a {
-    color: var(--dark-grey);
+    color: var(--primary-blue);
     font-weight: bold;
     padding: 10px 0;
     transition: color 0.3s;
