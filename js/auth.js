@@ -12,15 +12,16 @@ import {
     getDoc
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-// Firebase Config – Replace with your own values
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBhJGjCQpjHdHC5Lc0b9e7p5of3qBw2lSw",
+  authDomain: "greatergloryonline-6176b.firebaseapp.com",
+  projectId: "greatergloryonline-6176b",
+  storageBucket: "greatergloryonline-6176b.firebasestorage.app",
+  messagingSenderId: "311924502734",
+  appId: "1:311924502734:web:423e7222cf1c529288e09f",
+  measurementId: "G-W9Q1J7GF3M"
 };
+
 
 // Mock accounts for offline testing
 const MOCK_ACCOUNTS = {
