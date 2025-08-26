@@ -7,7 +7,7 @@ This repository contains the front-end code for the official Greater Glory Minis
 - `index.html`: The main landing page.
 - `css/style.css`: All the CSS for styling the website.
 - `js/script.js`: All the JavaScript for interactive elements (e.g., slideshow, navigation).
-- `images/`: Stores all image assets.
+- `assets/`: Stores all image assets.
 - `pages/`: Contains HTML files for sub-pages.
 
 ## Features
