@@ -1,127 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website File Structure</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #002d62;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .file-tree {
-            list-style: none;
-            padding-left: 20px;
-        }
-
-        .file-tree li {
-            position: relative;
-            padding: 5px 0 5px 25px;
-        }
-        
-        .file-tree a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.2s;
-        }
-
-        .file-tree a:hover {
-            color: #d20019;
-        }
-        
-        .file-tree .icon {
-            margin-right: 10px;
-            color: #555;
-            width: 15px; /* Fixed width for alignment */
-        }
-        
-        .file-tree .folder .icon {
-            color: #f1c40f;
-        }
-
-        .file-tree .file .icon {
-            color: #3498db;
-        }
-
-        .file-tree .sub-tree {
-            list-style: none;
-            padding-left: 25px;
-            border-left: 1px dashed #ccc;
-            margin-left: 5px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Sitemap</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 2rem;
+    background: #f9f9f9;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 1rem;
+  }
+  li {
+    cursor: pointer;
+    position: relative;
+    margin: 4px 0;
+  }
+  li::before {
+    content: "▸";
+    position: absolute;
+    left: -1rem;
+    transition: transform 0.2s;
+  }
+  li.expanded::before {
+    transform: rotate(90deg);
+  }
+  .nested {
+    display: none;
+  }
+  .nested li {
+    cursor: default;
+  }
+  li.file::before {
+    content: "•";
+    transform: rotate(0);
+    left: -1rem;
+  }
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Website File Structure</h1>
-        <p>Click on any of the links below to navigate to the page and verify that it's working correctly.</p>
+<h1>Interactive Sitemap</h1>
+<ul>
+  <li>📁 root-folder
+    <ul class="nested">
+      <li class="file"><a href="index.html">index.html</a></li>
+      <li class="file"><a href="README.md">README.md</a></li>
 
-        <ul class="file-tree">
-            <li class="folder">
-                <i class="fas fa-folder icon"></i> <a href="#">root</a>
-                <ul class="sub-tree">
-                    <li class="file"><i class="fas fa-file-alt icon"></i> <a href="index.html">index.html</a></li>
-                    <li class="folder">
-                        <i class="fas fa-folder icon"></i> <a href="#">pages</a>
-                        <ul class="sub-tree">
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/ggm-near-me.html">ggm-near-me.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/what-to-expect.html">what-to-expect.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/upcoming.html">upcoming.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/about.html">About-us.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/cell.html">cell-groups.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/pwpi.html">pray-with-us.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/miracle.html">miracle-hour.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/serve.html">serve-with-us.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/partner.html">partner-with-us.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/ministries.html">ministries.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/media.html">media.html</a></li>
-                            <li class="file"><i class="fas fa-file-alt icon"></i> <a href="pages/give.html">give.html</a></li>
-                        </ul>
-                    </li>
-                    <li class="folder">
-                        <i class="fas fa-folder icon"></i> <a href="#">css</a>
-                        <ul class="sub-tree">
-                            <li class="file"><i class="fas fa-file-code icon"></i> <a href="css/style.css">style.css</a></li>
-                        </ul>
-                    </li>
-                    <li class="folder">
-                        <i class="fas fa-folder icon"></i> <a href="#">js</a>
-                        <ul class="sub-tree">
-                            <li class="file"><i class="fas fa-file-code icon"></i> <a href="js/script.js">script.js</a></li>
-                        </ul>
-                    </li>
-                    <li class="folder">
-                        <i class="fas fa-folder icon"></i> <a href="#">images</a>
-                        <ul class="sub-tree">
-                            <li class="file"><i class="fas fa-file-image icon"></i> <a href="#">[your images here]</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
+      <li>📁 css
+        <ul class="nested">
+          <li class="file"><a href="css/style.css">style.css</a></li>
         </ul>
-    </div>
+      </li>
+
+      <li>📁 assets
+        <ul class="nested">
+          <li class="file"><a href="assets/about-hero-bg.jpg">about-hero-bg.jpg</a></li>
+          <li class="file"><a href="assets/hero-1.jpeg">hero-1.jpeg</a></li>
+          <li class="file"><a href="assets/hero-2.jpeg">hero-2.jpeg</a></li>
+          <li class="file"><a href="assets/hero-3.jpeg">hero-3.jpeg</a></li>
+          <li class="file"><a href="assets/logo.png">logo.png</a></li>
+          <li>📁 icons
+            <ul class="nested">
+              <li class="file"><a href="assets/icons/facebook.svg">facebook.svg</a></li>
+              <li class="file"><a href="assets/icons/Whatsapp.svg">Whatsapp.svg</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>📁 js
+        <ul class="nested">
+          <li class="file"><a href="js/auth-control.js">auth-control.js</a></li>
+          <li class="file"><a href="js/auth.js">auth.js</a></li>
+          <li class="file"><a href="js/script.js">script.js</a></li>
+        </ul>
+      </li>
+
+      <li>📁 pages
+        <ul class="nested">
+          <li class="file"><a href="pages/About.html">about.html</a></li>
+          <li class="file"><a href="pages/cell.html">cell.html</a></li>
+          <li class="file"><a href="pages/form.html">form.html</a></li>
+          <li class="file"><a href="pages/give.html">give.html</a></li>
+          <li class="file"><a href="pages/ggm-near-me.html">ggm-near-me.html</a></li>
+          <li class="file"><a href="pages/media.html">media.html</a></li>
+          <li class="file"><a href="pages/miracle.html">miracle.html</a></li>
+          <li class="file"><a href="pages/ministries.html">ministries.html</a></li>
+          <li class="file"><a href="pages/new-believers.html">new-believers.html</a></li>
+          <li class="file"><a href="pages/partner.html">partner.html</a></li>
+          <li class="file"><a href="pages/pwpi.html">pwpi.html</a></li>
+          <li class="file"><a href="pages/payment.html">payment.html</a></li>
+          <li class="file"><a href="pages/salvation.html">salvation.html</a></li>
+          <li class="file"><a href="pages/serve.html">serve.html</a></li>
+          <li class="file"><a href="pages/upcoming.html">upcoming.html</a></li>
+          <li class="file"><a href="pages/what-to-expect.html">what-to-expect.html</a></li>
+
+          <li>📁 signin
+            <ul class="nested">
+              <li class="file"><a href="pages/signin/auth.html">auth.html</a></li>
+              <li class="file"><a href="pages/signin/member-dashboard.html">member-dashboard.html</a></li>
+              <li class="file"><a href="pages/signin/leader-dashboard.html">leader-dashboard.html</a></li>
+              <li class="file"><a href="pages/signin/admin-dashboard.html">admin-dashboard.html</a></li>
+              <li class="file"><a href="pages/signin/pastor-dashboard.html">pastor-dashboard.html</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </li>
+
+    </ul>
+  </li>
+</ul>
+
+<script>
+const togglers = document.querySelectorAll('li');
+
+togglers.forEach(li => {
+  li.addEventListener('click', function(e) {
+    e.stopPropagation(); // prevent parent toggling
+    const nested = this.querySelector('.nested');
+    if (nested) {
+      nested.style.display = nested.style.display === 'block' ? 'none' : 'block';
+      this.classList.toggle('expanded');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
+
