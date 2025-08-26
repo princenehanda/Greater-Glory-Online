@@ -1,0 +1,1482 @@
+ .leader-item,
+    .registration-item,
+    .user-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .leader-actions,
+    .registration-actions,
+    .user-actions {
+        justify-content: center;
+    }
+    
+    .admin-tools-grid,
+    .admin-actions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .communication-tools {
+        grid-template-columns: 1fr;
+    }
+    
+    .financial-summary {
+        gap: 15px;
+    }
+    
+    .area            <div class="profile-content" id="overview-content">
+                <div class="profile-sections">
+                    <div class="profile-section">
+                        <h3>Personal Information</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Full Name:</label>
+                                <span>${leaderName}</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Email:</label>
+                                <span>${leaderName.toLowerCase().replace(' ', '.')}@ggm.org</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Phone:</label>
+                                <span>+263 77 123 4567</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Address:</label>
+                                <span>123 Leadership Ave, Highlands</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>Leadership Details</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>Position:</label>
+                                <span>Cell Group Leader</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Area:</label>
+                                <span>Highlands Area</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Cell Group:</label>
+                                <span>Cell Alpha</span>
+                            </div>
+                            <div class="info-item">
+                                <label>Leadership Since:</label>
+                                <span>January 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>Performance Metrics</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">15</div>
+                                <div class="metric-label">Active Members</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">95%</div>
+                                <div class="metric-label">Attendance Rate</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">23</div>
+                                <div class="metric-label">Meetings Held</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">3</div>
+                                <div class="metric-label">New Converts</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-actions">
+                <button class="btn btn-primary" onclick="editLeaderProfile('${leaderName}')">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </button>
+                <button class="btn btn-outline" onclick="assignNewRole('${leaderName}')">
+                    <i class="fas fa-user-cog"></i> Assign Role
+                </button>
+                <button class="btn btn-secondary" onclick="generateLeaderReport('${leaderName}')">
+                    <i class="fas fa-chart-bar"></i> Generate Report
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('userModal').style.display = 'block';
+}
+
+function manageLeader(leaderName) {
+    const managementAction = prompt(`Leadership Management for ${leaderName}:\n\n1. Assign to different area\n2. Promote to senior leader\n3. Provide additional training\n4. Schedule performance review\n5. Send supportive resources\n\nSelect action (1-5):`);
+    
+    if (managementAction && managementAction >= 1 && managementAction <= 5) {
+        const actions = [
+            'Area reassignment',
+            'Promotion to senior leader',
+            'Additional training program',
+            'Performance review scheduling',
+            'Supportive resource delivery'
+        ];
+        
+        alert(`✅ ${actions[managementAction-1]} initiated for ${leaderName}\n\nYou will receive confirmation and next steps within 24 hours.`);
+    }
+}
+
+// Member Management Functions
+function viewNewMembers() {
+    alert('📋 New Members Report:\n\n• Sarah Johnson (Cell Alpha)\n• Michael Brown (Cell Beta)\n• Lisa Davis (Cell Gamma)\n• Peter Wilson (Cell Delta)\n...\n\nOpening detailed new member dashboard...');
+}
+
+function reviewPending() {
+    alert('⏳ Pending Approvals:\n\n1. Sarah Johnson - Registration (2 days)\n2. David Lee - Ministry Transfer (5 days)\n3. Mary Smith - Leadership Application (1 week)\n\nOpening approval workflow...');
+}
+
+function viewInactive() {
+    alert('📉 Inactive Members Follow-up:\n\n• Members absent 4+ weeks: 8 people\n• Last contact attempts: 2 weeks ago\n• Recommended actions: Pastoral visits\n\nOpening member care workflow...');
+}
+
+function approveRegistration(memberName) {
+    const approval = confirm(`Approve registration for ${memberName}?\n\nThis will:\n• Grant full member access\n• Assign to selected cell group\n• Send welcome email\n• Notify cell leader`);
+    
+    if (approval) {
+        alert(`✅ ${memberName} has been approved!\n\n• Welcome package sent\n• Cell leader notified\n• Member profile activated\n• Access permissions granted`);
+    }
+}
+
+function reviewRegistration(memberName) {
+    alert(`📋 Registration Review: ${memberName}\n\nApplication Details:\n• Submitted: 2 days ago\n• Cell Preference: Alpha\n• Ministry Interest: Choir\n• Background Check: Pending\n• References: 2 provided\n\nOpening detailed review interface...`);
+}
+
+// System Administration Functions
+function manageUsers() {
+    const modalContent = document.getElementById('systemModalContent');
+    modalContent.innerHTML = `
+        <div class="user-management-container">
+            <h2><i class="fas fa-users-cog"></i> User Management System</h2>
+            
+            <div class="user-management-tabs">
+                <button class="mgmt-tab active" onclick="switchMgmtTab('all-users')">All Users (247)</button>
+                <button class="mgmt-tab" onclick="switchMgmtTab('pending')">Pending (3)</button>
+                <button class="mgmt-tab" onclick="switchMgmtTab('inactive')">Inactive (8)</button>
+                <button class="mgmt-tab" onclick="switchMgmtTab('leaders')">Leaders (18)</button>
+            </div>
+            
+            <div class="user-search-bar">
+                <input type="text" placeholder="Search users..." class="search-input">
+                <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="users-list">
+                <div class="user-item">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h4>John Member</h4>
+                        <p>john.member@email.com • Member • Cell Alpha</p>
+                        <span class="status-badge active">Active</span>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn btn-sm btn-outline" onclick="editUser('John Member')">Edit</button>
+                        <button class="btn btn-sm btn-secondary" onclick="resetPassword('John Member')">Reset Password</button>
+                        <button class="btn btn-sm btn-danger" onclick="suspendUser('John Member')">Suspend</button>
+                    </div>
+                </div>
+                
+                <div class="user-item">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="user-details">
+                        <h4>Jane Leader</h4>
+                        <p>jane.leader@ggm.org • Leader • Cell Alpha</p>
+                        <span class="status-badge leader">Leader</span>
+                    </div>
+                    <div class="user-actions">
+                        <button class="btn btn-sm btn-outline" onclick="editUser('Jane Leader')">Edit</button>
+                        <button class="btn btn-sm btn-secondary" onclick="resetPassword('Jane Leader')">Reset Password</button>
+                        <button class="btn btn-sm btn-primary" onclick="promoteUser('Jane Leader')">Promote</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="user-management-actions">
+                <button class="btn btn-primary" onclick="createNewUser()">
+                    <i class="fas fa-user-plus"></i> Create New User
+                </button>
+                <button class="btn btn-outline" onclick="bulkUserActions()">
+                    <i class="fas fa-tasks"></i> Bulk Actions
+                </button>
+                <button class="btn btn-secondary" onclick="exportUserData()">
+                    <i class="fas fa-download"></i> Export Data
+                </button>
+            </div>
+        </div>
+    `;
+    
+    document.getElementById('systemModal').style.display = 'block';
+}
+
+function manageRoles() {
+    alert('🔐 Role Management System:\n\nCurrent Roles:\n• Member (247 users)\n• Leader (18 users)\n• Admin (3 users)\n• Pastor (1 user)\n\nRole Permissions:\n• View/Edit capabilities\n• Access restrictions\n• Feature permissions\n\nOpening role configuration panel...');
+}
+
+function systemSettings() {
+    alert('⚙️ System Settings Panel:\n\nAvailable Settings:\n• Email configurations\n• SMS gateway settings\n• Security parameters\n• Backup schedules\n• Maintenance windows\n• Performance optimization\n\nOpening system configuration...');
+}
+
+function databaseManagement() {
+    alert('🗄️ Database Management:\n\nDatabase Status:\n• Last backup: 2 hours ago\n• Size: 2.3 GB\n• Performance: Optimal\n• Maintenance: Scheduled for tonight\n\nAvailable Actions:\n• Create backup\n• Restore data\n• Optimize performance\n• View logs');
+}
+
+function securityLogs() {
+    alert('🛡️ Security Monitoring:\n\nRecent Alerts:\n• 3 failed login attempts (resolved)\n• 1 suspicious IP blocked\n• 2 permission violations (reviewed)\n\nSecurity Status: PROTECTED\n\nOpening detailed security dashboard...');
+}
+
+function systemReports() {
+    alert('📊 System Analytics:\n\nAvailable Reports:\n• User activity summary\n• Performance metrics\n• Security audit log\n• Growth statistics\n• Financial summary\n• System health report\n\nGenerating comprehensive system report...');
+}
+
+// Content Management Functions
+function manageWebContent() {
+    alert('🌐 Website Content Management:\n\nContent Areas:\n• Homepage updates\n• About Us sections\n• Ministry pages\n• Event announcements\n• Blog posts\n• Resource library\n\nOpening content management system...');
+}
+
+function manageStudyMaterials() {
+    alert('📚 Study Materials Management:\n\nMaterial Categories:\n• Weekly lesson plans\n• Sermon notes\n• Bible study guides\n• Training materials\n• Leader resources\n\nPending Reviews: 2 documents\n\nOpening materials library...');
+}
+
+function manageMedia() {
+    alert('🎥 Media Library Management:\n\nMedia Statistics:\n• Total files: 156\n• Storage used: 2.3 GB\n• New uploads: 5 videos\n• Pending approval: 3 files\n\nFile Types:\n• Videos, Audio, Images, Documents\n\nOpening media manager...');
+}
+
+function createContent() {
+    const contentType = prompt('Create New Content:\n\n1. Website page\n2. Study material\n3. Announcement\n4. Newsletter article\n5. Training document\n\nSelect content type (1-5):');
+    
+    if (contentType) {
+        alert('📝 Content Creator opened!\n\nFeatures available:\n• Rich text editor\n• Media insertion\n• Template selection\n• Preview mode\n• Collaboration tools\n• Publishing workflow');
+    }
+}
+
+function reviewPendingContent() {
+    alert('👁️ Pending Content Review:\n\n1. "Faith Series Week 4" - Study Guide\n2. "Youth Conference 2025" - Event Page\n3. "Monthly Newsletter" - Article Draft\n\nOpening content review interface...');
+}
+
+// Communication Functions
+function sendAnnouncement() {
+    const modalContent = document.getElementById('commModalContent');
+    modalContent.innerHTML = `
+        <div class="announcement-composer">
+            <h2><i class="fas fa-bullhorn"></i> Send Announcement</h2>
+            
+            <form id="announcementForm">
+                <div class="form-group">
+                    <label for="announcementTitle">Announcement Title</label>
+                    <input type="text" id="announcementTitle" placeholder="Enter announcement title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="announcementAudience">Target Audience</label>
+                    <select id="announcementAudience" required>
+                        <option value="">Select audience...</option>
+                        <option value="all">All Members</option>
+                        <option value="leaders">Leaders Only</option>
+                        <option value="members">Members Only</option>
+                        <option value="area-highlands">Highlands Area</option>
+                        <option value="area-avondale">Avondale Area</option>
+                        <option value="ministry-choir">Choir Ministry</option>
+                        <option value="ministry-youth">Youth Ministry</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="announcementPriority">Priority Level</label>
+                    <select id="announcementPriority" required>
+                        <option value="normal">Normal</option>
+                        <option value="high">High Priority</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="announcementMessage">Message</label>
+                    <textarea id="announcementMessage" rows="6" placeholder="Enter your announcement message..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="sendEmail" checked>
+                        <span class="checkmark"></span>
+                        Send via Email
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="sendSMS">
+                        <span class="checkmark"></span>
+                        Send via SMS (High Priority/Urgent only)
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="postWebsite" checked>
+                        <span class="checkmark"></span>
+                        Post on Website
+                    </label>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Announcement
+                    </button>
+                    <button type="button" class="btn btn-outline" onclick="previewAnnouncement()">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('commModal')">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    `;
+    
+    document.getElementById('commModal').style.display = 'block';
+    
+    // Handle form submission
+    document.getElementById('announcementForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        sendAnnouncementMessage();
+    });
+}
+
+function sendAnnouncementMessage() {
+    const title = document.getElementById('announcementTitle').value;
+    const audience = document.getElementById('announcementAudience').value;
+    const priority = document.getElementById('announcementPriority').value;
+    const message = document.getElementById('announcementMessage').value;
+    const sendEmail = document.getElementById('sendEmail').checked;
+    const sendSMS = document.getElementById('sendSMS').checked;
+    const postWebsite = document.getElementById('postWebsite').checked;
+    
+    alert(`📢 Announcement "${title}" sent successfully!\n\nAudience: ${audience}\nPriority: ${priority}\n\nDelivery channels:\n${sendEmail ? '✅ Email\n' : ''}${sendSMS ? '✅ SMS\n' : ''}${postWebsite ? '✅ Website\n' : ''}\nDelivery status will be tracked in your dashboard.`);
+    
+    closeModal('commModal');
+}
+
+function manageEmailCampaigns() {
+    alert('📧 Email Campaign Manager:\n\nActive Campaigns:\n• Weekly Newsletter (234 subscribers)\n• Leadership Updates (18 subscribers)\n• Ministry Announcements (156 subscribers)\n\nCampaign Performance:\n• Open rate: 76%\n• Click rate: 23%\n• Unsubscribe rate: 1.2%\n\nOpening campaign dashboard...');
+}
+
+function sendSMS() {
+    alert('📱 SMS Notification System:\n\nAvailable SMS Credits: 1,247\nLast month usage: 156 SMS\n\nQuick Send Options:\n• Meeting reminders\n• Emergency alerts\n• Prayer requests\n• Event notifications\n\nOpening SMS composer...');
+}
+
+// Financial Functions
+function viewFinancialReports() {
+    alert('💰 Financial Reports Dashboard:\n\nAvailable Reports:\n• Monthly income/expense summary\n• Donation tracking by category\n• Ministry budget allocation\n• Tithe and offering analysis\n• Partnership contribution report\n• Financial forecast\n\nOpening financial analytics...');
+}
+
+function manageTransactions() {
+    alert('💳 Transaction Management:\n\nRecent Transactions:\n• $500 - Online Donation (2 hours ago)\n• $1,200 - Tithe Collection (Sunday)\n• $300 - Ministry Offering (Sunday)\n• $150 - Partnership Payment (Yesterday)\n\nOpening transaction history...');
+}
+
+function budgetManagement() {
+    alert('📊 Budget Management System:\n\nMonthly Budget Overview:\n• Total Budget: $15,000\n• Spent: $8,230 (55%)\n• Remaining: $6,770 (45%)\n\nCategory Breakdown:\n• Ministry Operations: $4,500\n• Facilities: $2,300\n• Outreach: $1,430\n• Administration: $800\n\nOpening budget planner...');
+}
+
+// Activity Monitor Functions
+function reviewUser(userName) {
+    alert(`👤 User Review: ${userName}\n\nRegistration Details:\n• Application submitted: 2 minutes ago\n• Cell group preference: Alpha\n• Ministry interest: Choir\n• Emergency contact: Provided\n• Background check: In progress\n\nAction required: Approve or request more information`);
+}
+
+function viewMeeting() {
+    alert('📅 Meeting Details:\n\nMeeting: Weekly Cell Study\nLeader: Jane Leader\nDate: Tomorrow, 6:00 PM\nLocation: Highlands Community Center\nTopic: Walking in Faith\nExpected Attendance: 15 members\n\nStatus: Confirmed');
+}
+
+function viewBackupDetails() {
+    alert('💾 System Backup Details:\n\nBackup Completed: 1 hour ago\nBackup Size: 2.34 GB\nBackup Location: Secure Cloud Storage\nBackup Type: Incremental\nNext Scheduled: Tonight 2:00 AM\n\nBackup Status: ✅ Successful\nAll data safely stored');
+}
+
+function viewDonation() {
+    alert('💝 Donation Details:\n\nAmount: $500.00\nDonor: Anonymous\nMethod: Online Credit Card\nPurpose: General Fund\nTransaction ID: TXN789456123\nDate: 3 hours ago\n\nStatus: ✅ Processed\nThank you note: Sent');
+}
+
+function viewAllActivity() {
+    alert('📋 Complete Activity Log:\n\nShowing last 100 system activities...\n\nFilters available:\n• By user type\n• By activity type\n• By date range\n• By significance level\n\nExport options:\n• PDF report\n• Excel spreadsheet\n• JSON data');
+}
+
+function exportActivity() {
+    alert('📤 Activity Log Export:\n\nExport format:\n• PDF Report (Summary)\n• Excel Spreadsheet (Detailed)\n• JSON Data (Raw)\n\nDate range: Last 30 days\nTotal entries: 1,247\n\nExport will be emailed to you within 5 minutes.');
+}
+
+// Quick Actions
+function createUser() {
+    alert('👤 Create New User Account:\n\nUser Creation Wizard will guide you through:\n• Basic information entry\n• Role assignment\n• Cell group assignment\n• Ministry preferences\n• Access permissions\n• Welcome email setup\n\nOpening user creation form...');
+}
+
+function promoteToLeader() {
+    const memberName = prompt('Promote Member to Leader:\n\nEnter the member name to promote:');
+    if (memberName) {
+        alert(`⬆️ Promoting ${memberName} to Leader!\n\nPromotion Process:\n• Leadership training assignment\n• Cell group assignment\n• Mentor pairing\n• Resource access upgrade\n• Notification to area admin\n\nPromotion will be effective within 24 hours.`);
+    }
+}
+
+function systemMaintenance() {
+    const maintenanceType = prompt('System Maintenance:\n\n1. Database optimization\n2. Cache clearing\n3. Security updates\n4. Performance tuning\n5. Backup verification\n\nSelect maintenance type (1-5):');
+    
+    if (maintenanceType) {
+        alert('🔧 System maintenance initiated!\n\n• Maintenance window: 30 minutes\n• User notification sent\n• Backup created automatically\n• Progress monitoring active\n\nMaintenance status will be updated in real-time.');
+    }
+}
+
+function emergencyNotification() {
+    const emergency = confirm('🚨 EMERGENCY NOTIFICATION SYSTEM\n\nThis will send immediate alerts to ALL members via:\n• SMS text messages\n• Email notifications\n• Website banner\n• Mobile app push notifications\n\nOnly use for genuine emergencies.\n\nProceed with emergency alert?');
+    
+    if (emergency) {
+        const message = prompt('Enter emergency message (keep it brief and clear):');
+        if (message) {
+            alert(`🚨 EMERGENCY ALERT SENT!\n\nMessage: "${message}"\n\n• 247 SMS sent\n• 247 emails sent\n• Website banner active\n• Mobile notifications pushed\n\nAll delivery confirmations will be tracked.`);
+        }
+    }
+}
+
+function generateSystemReport() {
+    alert('📈 System Report Generator:\n\nComprehensive system report will include:\n• User statistics and growth\n• System performance metrics\n• Security audit results\n• Financial summary\n• Activity trends\n• Recommendations\n\nEstimated generation time: 5 minutes\nReport will be emailed upon completion.');
+}
+
+function accessControlPanel() {
+    alert('🎛️ Administrative Control Panel:\n\nAdvanced system controls:\n• Server management\n• Database administration\n• Security configurations\n• Performance monitoring\n• Network settings\n• Integration management\n\nOpening advanced admin panel...');
+}
+
+// System Health Functions
+function viewSystemDetails() {
+    alert('💻 System Details:\n\nServer Information:\n• CPU: Intel Xeon 2.4GHz (8 cores)\n• RAM: 32GB DDR4\n• Storage: 1TB SSD\n• Bandwidth: 1Gbps\n• OS: Ubuntu 22.04 LTS\n• Uptime: 45 days\n\nApplication Stack:\n• Web Server: Nginx\n• Database: PostgreSQL\n• Cache: Redis\n• CDN: Cloudflare');
+}
+
+function optimizeSystem() {
+    const optimization = confirm('System Optimization:\n\nThis will:\n• Clear temporary files\n• Optimize database queries\n• Refresh cache memory\n• Update system indexes\n• Compress log files\n\nEstimated time: 10 minutes\nSystem will remain online during optimization.\n\nProceed with optimization?');
+    
+    if (optimization) {
+        alert('🚀 System optimization started!\n\n• Database optimization: In progress\n• Cache refresh: Completed\n• File cleanup: In progress\n• Index rebuilding: Queued\n\nProgress will be shown in real-time.\nYou will be notified upon completion.');
+    }
+}
+
+// Utility Functions
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+function handleLogout() {
+    localStorage.removeItem('mockAuth');
+    if (typeof firebase !== 'undefined' && firebase.auth) {
+        firebase.auth().signOut();
+    }
+    window.location.href = '../../index.html';
+}
+
+// Initialize logout functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.style.display = 'inline-block';
+        logoutBtn.addEventListener('click', handleLogout);
+    }
+});
+
+// Close modals when clicking outside
+window.onclick = function(event) {
+    const modals = ['userModal', 'commModal', 'systemModal'];
+    modals.forEach(modalId => {
+        const modal = document.getElementById(modalId);
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
+</script>
+
+<style>
+.dashboard-main {
+    padding: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    background: #f5f6fa;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+}
+
+.welcome-section h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.greeting {
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+    opacity: 0.95;
+    font-weight: 500;
+}
+
+.section-description {
+    opacity: 0.85;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.admin-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 18px 25px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.admin-badge i {
+    font-size: 1.8rem;
+    color: #ffd700;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 1px solid #e0e6ed;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.dashboard-card h3 i {
+    color: #e74c3c;
+    font-size: 1.5em;
+    filter: drop-shadow(0 2px 4px rgba(231, 76, 60, 0.3));
+}
+
+/* System Stats */
+.system-stats-card {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+}
+
+.system-stats-card::before {
+    background: linear-gradient(90deg, #ffd700, #f39c12);
+}
+
+.system-stats-card h3 {
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.system-stats-card h3 i {
+    color: #ffd700;
+}
+
+.system-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #ffd700;
+    text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.stat-trend {
+    font-size:<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Greater Glory Ministries</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="../../index.html" class="logo">
+            <img src="../../assets/logo.png" alt="Greater Glory Ministries Logo">
+            <span class="logo-text">Greater Glory Ministries</span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item has-dropdown">
+                <a href="../About.html">About Us</a>
+                <ul class="dropdown">
+                    <li><a href="../About.html#vision">Vision</a></li>
+                    <li><a href="../About.html#mission">Mission</a></li>
+                    <li><a href="../About.html#our-dna">Our DNA</a></li>
+                    <li><a href="../About.html#what-we-believe">What We Believe</a></li>
+                    <li><a href="../About.html#visionary">Visionary</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown member-only">
+                <a href="../ministries.html">Ministries</a>
+                <ul class="dropdown">
+                    <li><a href="../ministries.html#daughters">Daughters of Destiny</a></li>
+                    <li><a href="../ministries.html#men">Men of Valour</a></li>
+                    <li><a href="../ministries.html#impact">Impact Generation</a></li>
+                    <li><a href="../ministries.html#haven">Haven</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown member-only">
+                <a href="../partner.html">Partner</a>
+                <ul class="dropdown">
+                    <li><a href="../partner.html">Partner with Us</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown member-only">
+                <a href="../serve.html">Serve</a>
+                <ul class="dropdown">
+                    <li><a href="../serve.html">Serve with Us</a></li>
+                </ul>
+            </li>
+            <li class="nav-item media-link">
+                <a href="../media.html">Media</a>
+            </li>
+            <li class="nav-item cta-give"><a href="../give.html">Give</a></li>
+            
+            <li class="nav-item leader-only"><a href="leader-dashboard.html">Leader Portal</a></li>
+            <li class="nav-item admin-only"><a href="admin-dashboard.html">Admin Portal</a></li>
+            <li class="nav-item pastor-only" style="display: none;"><a href="Pastor-dashboard.html">Pastor Portal</a></li>
+
+            <li class="nav-item auth-action" style="display: none;"><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<main class="section dashboard-main">
+    <div class="dashboard-header">
+        <div class="welcome-section">
+            <h1 class="page-title">Admin Control Center</h1>
+            <p class="greeting">Welcome, <span id="adminName">Administrator</span>! ⚡</p>
+            <p class="section-description">Oversee operations, manage leaders, and maintain system integrity across all ministry areas.</p>
+        </div>
+        <div class="admin-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>System Administrator</span>
+        </div>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- System Overview Stats -->
+        <div class="dashboard-card system-stats-card">
+            <h3><i class="fas fa-tachometer-alt"></i> System Overview</h3>
+            <div class="system-stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">247</div>
+                    <div class="stat-label">Total Members</div>
+                    <div class="stat-trend positive">+12 this month</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">Active Leaders</div>
+                    <div class="stat-trend">3 Areas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Cell Groups</div>
+                    <div class="stat-trend positive">2 new this quarter</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">System Uptime</div>
+                    <div class="stat-trend">This month</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leadership Oversight -->
+        <div class="dashboard-card leadership-oversight-card">
+            <h3><i class="fas fa-users-cog"></i> Leadership Oversight</h3>
+            <div class="oversight-content">
+                <div class="area-tabs">
+                    <button class="area-tab active" onclick="switchArea('highlands')">Highlands Area</button>
+                    <button class="area-tab" onclick="switchArea('avondale')">Avondale Area</button>
+                    <button class="area-tab" onclick="switchArea('borrowdale')">Borrowdale Area</button>
+                </div>
+                
+                <div class="area-content" id="highlands-area">
+                    <div class="area-stats">
+                        <div class="area-stat">
+                            <span class="stat-label">Leaders</span>
+                            <span class="stat-value">6</span>
+                        </div>
+                        <div class="area-stat">
+                            <span class="stat-label">Members</span>
+                            <span class="stat-value">89</span>
+                        </div>
+                        <div class="area-stat">
+                            <span class="stat-label">Attendance</span>
+                            <span class="stat-value">88%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="leaders-list">
+                        <div class="leader-item">
+                            <div class="leader-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="leader-info">
+                                <h4>Jane Leader</h4>
+                                <p>Cell Alpha Leader • 15 members</p>
+                                <div class="leader-metrics">
+                                    <span class="metric good">95% Attendance</span>
+                                    <span class="metric">Active</span>
+                                </div>
+                            </div>
+                            <div class="leader-actions">
+                                <button class="action-btn" onclick="contactLeader('Jane Leader')" title="Contact">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                                <button class="action-btn" onclick="viewLeaderProfile('Jane Leader')" title="Profile">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" onclick="manageLeader('Jane Leader')" title="Manage">
+                                    <i class="fas fa-cogs"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="leader-item">
+                            <div class="leader-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="leader-info">
+                                <h4>Michael Smith</h4>
+                                <p>Cell Beta Leader • 12 members</p>
+                                <div class="leader-metrics">
+                                    <span class="metric average">78% Attendance</span>
+                                    <span class="metric warning">Needs Support</span>
+                                </div>
+                            </div>
+                            <div class="leader-actions">
+                                <button class="action-btn" onclick="contactLeader('Michael Smith')" title="Contact">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                                <button class="action-btn" onclick="viewLeaderProfile('Michael Smith')" title="Profile">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                                <button class="action-btn" onclick="manageLeader('Michael Smith')" title="Manage">
+                                    <i class="fas fa-cogs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="oversight-actions">
+                    <button class="btn btn-primary" onclick="generateLeadershipReport()">
+                        <i class="fas fa-chart-bar"></i> Generate Report
+                    </button>
+                    <button class="btn btn-outline" onclick="scheduleLeaderMeeting()">
+                        <i class="fas fa-calendar-plus"></i> Schedule Meeting
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Member Management -->
+        <div class="dashboard-card member-management-card">
+            <h3><i class="fas fa-users"></i> Member Management</h3>
+            <div class="member-management-content">
+                <div class="management-stats">
+                    <div class="management-stat">
+                        <div class="stat-icon new-members">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h4>12</h4>
+                            <p>New Members This Month</p>
+                        </div>
+                        <button class="btn btn-sm btn-primary" onclick="viewNewMembers()">View</button>
+                    </div>
+                    
+                    <div class="management-stat">
+                        <div class="stat-icon pending-approval">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h4>3</h4>
+                            <p>Pending Approvals</p>
+                        </div>
+                        <button class="btn btn-sm btn-warning" onclick="reviewPending()">Review</button>
+                    </div>
+                    
+                    <div class="management-stat">
+                        <div class="stat-icon inactive-members">
+                            <i class="fas fa-user-minus"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h4>8</h4>
+                            <p>Inactive Members</p>
+                        </div>
+                        <button class="btn btn-sm btn-outline" onclick="viewInactive()">Follow Up</button>
+                    </div>
+                </div>
+
+                <div class="recent-registrations">
+                    <h4>Recent Registrations</h4>
+                    <div class="registrations-list">
+                        <div class="registration-item">
+                            <div class="registration-details">
+                                <h5>Sarah Johnson</h5>
+                                <p>Registered 2 days ago • Cell Alpha</p>
+                                <span class="status pending">Pending Approval</span>
+                            </div>
+                            <div class="registration-actions">
+                                <button class="btn btn-sm btn-success" onclick="approveRegistration('Sarah Johnson')">
+                                    <i class="fas fa-check"></i> Approve
+                                </button>
+                                <button class="btn btn-sm btn-outline" onclick="reviewRegistration('Sarah Johnson')">
+                                    Review
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="registration-item">
+                            <div class="registration-details">
+                                <h5>David Brown</h5>
+                                <p>Registered 1 week ago • Cell Beta</p>
+                                <span class="status approved">Approved</span>
+                            </div>
+                            <div class="registration-actions">
+                                <button class="btn btn-sm btn-outline" onclick="viewMemberDetails('David Brown')">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Administration -->
+        <div class="dashboard-card system-admin-card admin-exclusive">
+            <div class="exclusive-badge">
+                <i class="fas fa-shield-alt"></i>
+                ADMIN EXCLUSIVE
+            </div>
+            <h3><i class="fas fa-server"></i> System Administration</h3>
+            <div class="admin-tools-grid">
+                <div class="admin-tool" onclick="manageUsers()">
+                    <i class="fas fa-users-cog"></i>
+                    <h4>User Management</h4>
+                    <p>Add, edit, or remove user accounts</p>
+                    <span class="tool-badge">247 Users</span>
+                </div>
+                
+                <div class="admin-tool" onclick="manageRoles()">
+                    <i class="fas fa-id-badge"></i>
+                    <h4>Role Management</h4>
+                    <p>Assign roles and permissions</p>
+                    <span class="tool-badge">4 Roles</span>
+                </div>
+                
+                <div class="admin-tool" onclick="systemSettings()">
+                    <i class="fas fa-cogs"></i>
+                    <h4>System Settings</h4>
+                    <p>Configure system parameters</p>
+                    <span class="tool-badge">Active</span>
+                </div>
+                
+                <div class="admin-tool" onclick="databaseManagement()">
+                    <i class="fas fa-database"></i>
+                    <h4>Database Management</h4>
+                    <p>Backup and maintain data</p>
+                    <span class="tool-badge">Last: 2 hours ago</span>
+                </div>
+                
+                <div class="admin-tool" onclick="securityLogs()">
+                    <i class="fas fa-shield-virus"></i>
+                    <h4>Security Logs</h4>
+                    <p>Monitor system security</p>
+                    <span class="tool-badge warning">3 Alerts</span>
+                </div>
+                
+                <div class="admin-tool" onclick="systemReports()">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>System Reports</h4>
+                    <p>Generate system analytics</p>
+                    <span class="tool-badge">Available</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Management -->
+        <div class="dashboard-card content-management-card">
+            <h3><i class="fas fa-edit"></i> Content Management</h3>
+            <div class="content-sections">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h4>Website Content</h4>
+                        <button class="btn btn-sm btn-outline" onclick="manageWebContent()">Manage</button>
+                    </div>
+                    <div class="content-stats">
+                        <span class="content-stat">12 Pages</span>
+                        <span class="content-stat">3 Pending Updates</span>
+                        <span class="content-stat">Last Updated: 2 days ago</span>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <div class="section-header">
+                        <h4>Study Materials</h4>
+                        <button class="btn btn-sm btn-outline" onclick="manageStudyMaterials()">Manage</button>
+                    </div>
+                    <div class="content-stats">
+                        <span class="content-stat">45 Documents</span>
+                        <span class="content-stat">8 New This Month</span>
+                        <span class="content-stat">2 Awaiting Review</span>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <div class="section-header">
+                        <h4>Media Library</h4>
+                        <button class="btn btn-sm btn-outline" onclick="manageMedia()">Manage</button>
+                    </div>
+                    <div class="content-stats">
+                        <span class="content-stat">156 Files</span>
+                        <span class="content-stat">2.3 GB Used</span>
+                        <span class="content-stat">5 New Videos</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-quick-actions">
+                <button class="btn btn-primary" onclick="createContent()">
+                    <i class="fas fa-plus"></i> Create Content
+                </button>
+                <button class="btn btn-outline" onclick="reviewPendingContent()">
+                    <i class="fas fa-eye"></i> Review Pending
+                </button>
+            </div>
+        </div>
+
+        <!-- Communication Center -->
+        <div class="dashboard-card communication-card">
+            <h3><i class="fas fa-broadcast-tower"></i> Communication Center</h3>
+            <div class="communication-tools">
+                <div class="comm-tool-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h4>Send Announcement</h4>
+                    <p>Broadcast to all members or specific groups</p>
+                    <button class="btn btn-primary" onclick="sendAnnouncement()">
+                        <i class="fas fa-paper-plane"></i> Send
+                    </button>
+                </div>
+                
+                <div class="comm-tool-card">
+                    <i class="fas fa-envelope-open"></i>
+                    <h4>Email Campaigns</h4>
+                    <p>Manage email newsletters and campaigns</p>
+                    <button class="btn btn-outline" onclick="manageEmailCampaigns()">
+                        <i class="fas fa-list"></i> Manage
+                    </button>
+                </div>
+                
+                <div class="comm-tool-card">
+                    <i class="fas fa-sms"></i>
+                    <h4>SMS Notifications</h4>
+                    <p>Send text message alerts and reminders</p>
+                    <button class="btn btn-secondary" onclick="sendSMS()">
+                        <i class="fas fa-mobile-alt"></i> Send SMS
+                    </button>
+                </div>
+            </div>
+            
+            <div class="recent-communications">
+                <h4>Recent Communications</h4>
+                <div class="comm-history">
+                    <div class="comm-item">
+                        <div class="comm-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="comm-details">
+                            <h5>Monthly Leaders Meeting</h5>
+                            <p>Sent to 18 leaders • 2 days ago</p>
+                            <span class="comm-status delivered">✅ 18 delivered</span>
+                        </div>
+                    </div>
+                    
+                    <div class="comm-item">
+                        <div class="comm-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="comm-details">
+                            <h5>Weekly Newsletter</h5>
+                            <p>Sent to all members • 1 week ago</p>
+                            <span class="comm-status delivered">✅ 234 delivered, 186 opened</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Overview -->
+        <div class="dashboard-card financial-overview-card">
+            <h3><i class="fas fa-chart-pie"></i> Financial Overview</h3>
+            <div class="financial-summary">
+                <div class="financial-stat">
+                    <div class="stat-icon income">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>$12,450</h4>
+                        <p>Total Income (This Month)</p>
+                        <span class="trend positive">+15% from last month</span>
+                    </div>
+                </div>
+                
+                <div class="financial-stat">
+                    <div class="stat-icon expenses">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>$8,230</h4>
+                        <p>Total Expenses (This Month)</p>
+                        <span class="trend">-5% from last month</span>
+                    </div>
+                </div>
+                
+                <div class="financial-stat">
+                    <div class="stat-icon net">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4>$4,220</h4>
+                        <p>Net Balance (This Month)</p>
+                        <span class="trend positive">+25% from last month</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="financial-actions">
+                <button class="btn btn-primary" onclick="viewFinancialReports()">
+                    <i class="fas fa-file-invoice"></i> View Reports
+                </button>
+                <button class="btn btn-outline" onclick="manageTransactions()">
+                    <i class="fas fa-list-ul"></i> Transactions
+                </button>
+                <button class="btn btn-secondary" onclick="budgetManagement()">
+                    <i class="fas fa-calculator"></i> Budget
+                </button>
+            </div>
+        </div>
+
+        <!-- Activity Monitor -->
+        <div class="dashboard-card activity-monitor-card">
+            <h3><i class="fas fa-chart-area"></i> Activity Monitor</h3>
+            <div class="activity-timeline">
+                <div class="activity-item">
+                    <div class="activity-time">2 min ago</div>
+                    <div class="activity-content">
+                        <div class="activity-icon user-activity">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-text">
+                            <strong>Sarah Johnson</strong> completed registration
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn-link" onclick="reviewUser('Sarah Johnson')">Review</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-time">15 min ago</div>
+                    <div class="activity-content">
+                        <div class="activity-icon leader-activity">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="activity-text">
+                            <strong>Jane Leader</strong> scheduled a cell meeting
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn-link" onclick="viewMeeting()">View</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-time">1 hour ago</div>
+                    <div class="activity-content">
+                        <div class="activity-icon system-activity">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="activity-text">
+                            System backup completed successfully
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn-link" onclick="viewBackupDetails()">Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-item">
+                    <div class="activity-time">3 hours ago</div>
+                    <div class="activity-content">
+                        <div class="activity-icon financial-activity">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="activity-text">
+                            New donation received: <strong>$500</strong>
+                        </div>
+                        <div class="activity-actions">
+                            <button class="btn-link" onclick="viewDonation()">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="activity-controls">
+                <button class="btn btn-outline" onclick="viewAllActivity()">
+                    <i class="fas fa-history"></i> View All Activity
+                </button>
+                <button class="btn btn-outline" onclick="exportActivity()">
+                    <i class="fas fa-download"></i> Export Log
+                </button>
+            </div>
+        </div>
+
+        <!-- Quick Administrative Actions -->
+        <div class="dashboard-card admin-actions-card">
+            <h3><i class="fas fa-bolt"></i> Quick Administrative Actions</h3>
+            <div class="admin-actions-grid">
+                <button class="admin-action-btn" onclick="createUser()">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add New User</span>
+                </button>
+                <button class="admin-action-btn" onclick="promoteToLeader()">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>Promote to Leader</span>
+                </button>
+                <button class="admin-action-btn" onclick="systemMaintenance()">
+                    <i class="fas fa-tools"></i>
+                    <span>System Maintenance</span>
+                </button>
+                <button class="admin-action-btn" onclick="emergencyNotification()">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>Emergency Alert</span>
+                </button>
+                <button class="admin-action-btn" onclick="generateSystemReport()">
+                    <i class="fas fa-file-alt"></i>
+                    <span>System Report</span>
+                </button>
+                <button class="admin-action-btn" onclick="accessControlPanel()">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Control Panel</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- System Health -->
+        <div class="dashboard-card system-health-card">
+            <h3><i class="fas fa-heartbeat"></i> System Health</h3>
+            <div class="health-metrics">
+                <div class="health-metric">
+                    <div class="metric-header">
+                        <h4>Server Performance</h4>
+                        <span class="status-indicator good"></span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-progress" style="width: 75%"></div>
+                    </div>
+                    <span class="metric-value">75% CPU Usage</span>
+                </div>
+                
+                <div class="health-metric">
+                    <div class="metric-header">
+                        <h4>Database Health</h4>
+                        <span class="status-indicator good"></span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-progress" style="width: 92%"></div>
+                    </div>
+                    <span class="metric-value">92% Optimal</span>
+                </div>
+                
+                <div class="health-metric">
+                    <div class="metric-header">
+                        <h4>Security Status</h4>
+                        <span class="status-indicator warning"></span>
+                    </div>
+                    <div class="metric-bar">
+                        <div class="metric-progress warning" style="width: 88%"></div>
+                    </div>
+                    <span class="metric-value">88% - 3 Warnings</span>
+                </div>
+            </div>
+            
+            <div class="health-actions">
+                <button class="btn btn-primary" onclick="viewSystemDetails()">
+                    <i class="fas fa-info-circle"></i> System Details
+                </button>
+                <button class="btn btn-outline" onclick="optimizeSystem()">
+                    <i class="fas fa-rocket"></i> Optimize
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- User Management Modal -->
+<div id="userModal" class="modal" style="display: none;">
+    <div class="modal-content large">
+        <span class="close" onclick="closeModal('userModal')">&times;</span>
+        <div id="userModalContent">
+            <!-- Content will be dynamically loaded -->
+        </div>
+    </div>
+</div>
+
+<!-- Communication Modal -->
+<div id="commModal" class="modal" style="display: none;">
+    <div class="modal-content large">
+        <span class="close" onclick="closeModal('commModal')">&times;</span>
+        <div id="commModalContent">
+            <!-- Content will be dynamically loaded -->
+        </div>
+    </div>
+</div>
+
+<!-- System Administration Modal -->
+<div id="systemModal" class="modal" style="display: none;">
+    <div class="modal-content large">
+        <span class="close" onclick="closeModal('systemModal')">&times;</span>
+        <div id="systemModalContent">
+            <!-- Content will be dynamically loaded -->
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 Greater Glory Ministries. All rights reserved.</p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="../../js/auth-control.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    loadAdminData();
+    initializeAdminDashboard();
+});
+
+function loadAdminData() {
+    // Check for mock auth first
+    const mockAuth = localStorage.getItem('mockAuth');
+    if (mockAuth) {
+        const user = JSON.parse(mockAuth);
+        updateDashboardWithAdminData(user);
+        return;
+    }
+    
+    // Firebase auth check
+    if (typeof firebase !== 'undefined' && firebase.auth) {
+        firebase.auth().onAuthStateChanged(async user => {
+            if (user) {
+                try {
+                    const userDoc = await firebase.firestore().collection('users').doc(user.uid).get();
+                    const userData = userDoc.exists ? userDoc.data() : {};
+                    userData.email = user.email;
+                    updateDashboardWithAdminData(userData);
+                } catch (error) {
+                    console.error('Error loading user data:', error);
+                }
+            } else {
+                window.location.href = 'auth.html';
+            }
+        });
+    }
+}
+
+function updateDashboardWithAdminData(user) {
+    // Update admin name
+    const adminName = document.getElementById('adminName');
+    if (adminName) {
+        adminName.textContent = user.name || user.email?.split('@')[0] || 'Administrator';
+    }
+    
+    // Show appropriate navigation items
+    showNavigationForRole(user.role);
+}
+
+function showNavigationForRole(role) {
+    const memberOnlyItems = document.querySelectorAll('.member-only');
+    const leaderOnlyItems = document.querySelectorAll('.leader-only');
+    const adminOnlyItems = document.querySelectorAll('.admin-only');
+    
+    memberOnlyItems.forEach(item => item.style.display = 'block');
+    leaderOnlyItems.forEach(item => item.style.display = 'block');
+    adminOnlyItems.forEach(item => item.style.display = 'block');
+}
+
+function initializeAdminDashboard() {
+    // Initialize admin-specific functionality
+    setupRealTimeMonitoring();
+    loadSystemMetrics();
+    checkSecurityAlerts();
+}
+
+function setupRealTimeMonitoring() {
+    // Simulate real-time system monitoring
+    setInterval(() => {
+        updateSystemMetrics();
+    }, 30000); // Update every 30 seconds
+}
+
+function updateSystemMetrics() {
+    // Update system health metrics
+    console.log('Updating system metrics...');
+}
+
+function loadSystemMetrics() {
+    // Load initial system metrics
+    console.log('Loading system metrics...');
+}
+
+function checkSecurityAlerts() {
+    // Check for security alerts
+    console.log('Checking security alerts...');
+}
+
+// Area Management Functions
+function switchArea(areaName) {
+    // Remove active class from all tabs
+    document.querySelectorAll('.area-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Add active class to clicked tab
+    event.target.classList.add('active');
+    
+    // Here you would load the specific area data
+    alert(`Switching to ${areaName} area management view.`);
+}
+
+function generateLeadershipReport() {
+    alert('📊 Generating Leadership Report...\n\nThis comprehensive report will include:\n• Leader performance metrics\n• Area-wise statistics\n• Member growth analysis\n• Attendance trends\n• Action items and recommendations\n\nThe report will be emailed to you within 5 minutes.');
+}
+
+function scheduleLeaderMeeting() {
+    const meetingType = prompt('Schedule Leadership Meeting:\n\n1. Monthly coordination meeting\n2. Emergency leadership meeting\n3. Training workshop\n4. One-on-one session\n\nSelect meeting type (1-4):');
+    
+    if (meetingType) {
+        alert('📅 Leadership meeting scheduled!\n\nNext steps:\n• Calendar invitations will be sent\n• Meeting agenda will be prepared\n• Resource materials will be shared\n• Reminder notifications scheduled');
+    }
+}
+
+// Leader Management Functions
+function contactLeader(leaderName) {
+    const contactMethod = confirm(`Contact ${leaderName}?\n\nClick OK to call, Cancel to send message.`);
+    if (contactMethod) {
+        alert(`📞 Calling ${leaderName}...`);
+    } else {
+        alert(`💬 Opening message interface for ${leaderName}...`);
+    }
+}
+
+function viewLeaderProfile(leaderName) {
+    const modalContent = document.getElementById('userModalContent');
+    modalContent.innerHTML = `
+        <div class="leader-profile-container">
+            <h2><i class="fas fa-user-tie"></i> ${leaderName} - Leader Profile</h2>
+            
+            <div class="profile-tabs">
+                <button class="profile-tab active" onclick="switchProfileTab('overview')">Overview</button>
+                <button class="profile-tab" onclick="switchProfileTab('performance')">Performance</button>
+                <button class="profile-tab" onclick="switchProfileTab('members')">Members</button>
+                <button class="profile-tab" onclick="switchProfileTab('settings')">Settings</button>
+            </div>
+            
+            <div class="profile-content" id="overview-content">
+                <div class="profile-sections">

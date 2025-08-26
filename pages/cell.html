@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Groups - Greater Glory Ministries</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="Greater Glory Ministries Logo">
+            <span class="logo-text">Greater Glory Ministries</span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item has-dropdown">
+                <a href="About.html">About Us</a>
+                <ul class="dropdown">
+                    <li><a href="About.html#vision">Our vision and mission</a></li>
+                    <li><a href="About.html#who">Who we are</a></li>
+                    <li><a href="About.html#what">what to expect</a></li>
+                    <li><a href="About.html#pastors">Meet our Pastors </a></li>
+                    <li><a href="About.html#statements">Our Statement of Faith</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+                <a href="#">I'm New</a>
+                <ul class="dropdown">
+                    <li><a href="salvation.html">Salvation</a></li>
+                    <li><a href="new-believers.html">New Believers</a></li>
+                    <li><a href="ggm-near-me.html">GGM Near Me</a></li>
+                    <li><a href="signin/auth.html">Sign up</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+                <a href="#">Meetings</a>
+                <ul class="dropdown">
+                    <li><a href="pwpi.html">Pray with Us (PWPI)</a></li>
+                    <li><a href="miracle.html">Miracle Hour</a></li>
+                    <li><a href="upcoming.html">Upcoming Services</a></li>                   
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+                <a href="#">Get involved</a>
+                <ul class="dropdown">
+                    <li><a href="cell.html">Cell Ministry</a></li>
+                    <li><a href="serve.html">Departments</a></li>
+                    <li><a href="ministries.html">ministries</a></li>                    
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown member-only" style="display: none;">
+                <a href="partner.html">Partner</a>
+                <ul class="dropdown">
+                    <li><a href="partner.html">Partnership Arms</a></li>
+                </ul>
+            </li>
+            <li class="nav-item media-link">
+                <a href="media.html">Media</a>
+            </li>
+            <li class="nav-item cta-give"><a href="give.html">Give</a></li>
+            
+            <li class="nav-item leader-only" style="display: none;"><a href="signin/leader-dashboard.html">Leader Portal</a></li>
+            <li class="nav-item admin-only" style="display: none;"><a href="signin/admin-dashboard.html">Admin Portal</a></li>
+            <li class="nav-item pastor-only" style="display: none;"><a href="signin/Pastor-dashboard.html">Pastor Portal</a></li>
+
+            <li class="nav-item auth-action"><a href="signin/auth.html" id="loginBtn">Sign In</a></li>
+            <li class="nav-item auth-action" style="display: none;"><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<main class="section">
+    <h1 class="page-title">Cell Groups</h1>
+    <p class="section-description">Connect with your cell group members, access study materials, and stay updated on local meetings. Click on a card to learn more!</p>
+    <div class="card-grid">
+        <div class="card-container">
+            <div class="unified-card spinning-card" onclick="handleCardClick(this)">
+                <div class="card-front">
+                    <img src="../assets/cell-group-1.jpeg" alt="Cell Group 1" class="card-image">
+                    <div class="card-content">
+                        <h3>Haven of Grace</h3>
+                        <p>Area: Harare North</p>
+                        <div class="auth-notice" style="display: none;">
+                            <i class="fas fa-lock"></i>
+                            <span>Sign in to view details</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-content">
+                        <h3>Haven of Grace Details</h3>
+                        <p><strong>Leader:</strong> Sis. Jane Doe</p>
+                        <p><strong>Location:</strong> Highlands, Harare</p>
+                        <p><strong>Meeting Time:</strong> Thursday, 18:00 CAT</p>
+                        <p>This group focuses on foundational studies and fellowship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="unified-card spinning-card" onclick="handleCardClick(this)">
+                <div class="card-front">
+                    <img src="../assets/cell-group-2.jpeg" alt="Cell Group 2" class="card-image">
+                    <div class="card-content">
+                        <h3>Divine Power</h3>
+                        <p>Area: Harare </p>
+                        <div class="auth-notice" style="display: none;">
+                            <i class="fas fa-lock"></i>
+                            <span>Sign in to view details</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-content">
+                        <h3>Divine Power Details</h3>
+                        <p><strong>Leader:</strong> Deacon. Alphio</p>
+                        <p><strong>Location:</strong> Braeside, Harare</p>
+                        <p><strong>Meeting Time:</strong> Thursday, 18:00 CAT</p>
+                        <p>A vibrant group for young professionals and families.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="unified-card spinning-card" onclick="handleCardClick(this)">
+                <div class="card-front">
+                    <img src="../assets/cell-group-3.jpeg" alt="Cell Group 3" class="card-image">
+                    <div class="card-content">
+                        <h3>Anointed Cell</h3>
+                        <p>Area: Borrowdale</p>
+                        <div class="auth-notice" style="display: none;">
+                            <i class="fas fa-lock"></i>
+                            <span>Sign in to view details</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-content">
+                        <h3>Anointed Cell Details</h3>
+                        <p><strong>Leader:</strong> Deaconess Juliana</p>
+                        <p><strong>Location:</strong> Borrowdale CBD</p>
+                        <p><strong>Meeting Time:</strong> Thursdays, 18:00 CAT</p>
+                        <p>This group is perfect for those new to the city.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional cards with same structure... (abbreviated for brevity) -->
+    </div>
+</main>
+
+<!-- Auth Modal -->
+<div id="authModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sign In Required</h2>
+        <p>Please sign in to view detailed information about our cell groups.</p>
+        <div class="modal-buttons">
+            <a href="signin/auth.html" class="btn btn-primary">Sign In</a>
+            <button class="btn btn-secondary" onclick="closeAuthModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 Greater Glory Ministries. All rights reserved.</p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="../js/auth-control.js"></script>
+
+<script>
+// Global auth state
+let isUserAuthenticated = false;
+
+// Check authentication status
+function checkAuthStatus() {
+    // For offline testing - check mock auth first
+    if (localStorage.getItem('mockAuth')) {
+        isUserAuthenticated = true;
+        return;
+    }
+    
+    // Firebase auth check (when online)
+    if (typeof firebase !== 'undefined' && firebase.auth) {
+        firebase.auth().onAuthStateChanged(user => {
+            isUserAuthenticated = !!user;
+            updateUIBasedOnAuth();
+        });
+    }
+}
+
+function updateUIBasedOnAuth() {
+    const authNotices = document.querySelectorAll('.auth-notice');
+    authNotices.forEach(notice => {
+        notice.style.display = isUserAuthenticated ? 'none' : 'block';
+    });
+}
+
+function handleCardClick(cardElement) {
+    if (!isUserAuthenticated) {
+        showAuthModal();
+        return;
+    }
+    
+    // If authenticated, allow normal card flip
+    cardElement.classList.toggle('flipped');
+}
+
+function showAuthModal() {
+    document.getElementById('authModal').style.display = 'block';
+}
+
+function closeAuthModal() {
+    document.getElementById('authModal').style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('authModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    checkAuthStatus();
+    
+    // Close modal button
+    document.querySelector('.close').addEventListener('click', closeAuthModal);
+});
+
+// Mock authentication for offline testing
+function mockSignIn(role = 'member') {
+    const mockUser = {
+        uid: 'mock-' + role,
+        email: `${role}@ggm.local`,
+        role: role,
+        timestamp: new Date().getTime()
+    };
+    
+    localStorage.setItem('mockAuth', JSON.stringify(mockUser));
+    isUserAuthenticated = true;
+    updateUIBasedOnAuth();
+    alert(`Mock sign in successful as ${role}!`);
+}
+
+// For testing - add these buttons temporarily or call from console
+// mockSignIn('member');
+// mockSignIn('leader'); 
+// mockSignIn('admin');
+// mockSignIn('pastor');
+</script>
+
+<style>
+.auth-notice {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 10px;
+    text-align: center;
+    color: #856404;
+    font-size: 0.9em;
+}
+
+.auth-notice i {
+    margin-right: 5px;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    animation: slideIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}
+</style>
+
+</body>
+</html>
