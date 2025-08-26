@@ -1182,6 +1182,22 @@ ul {
     font-size: 1rem;
 }
 
+/* Dashboard Specific Styles */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.dashboard-content, .ministry-item {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: var(--dark-grey);
+}
+
 /* ======================================= */
 /* Responsive Adjustments (Corrected)      */
 /* ======================================= */
