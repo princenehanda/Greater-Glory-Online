@@ -257,12 +257,6 @@ ul {
     padding: 2rem;
 }
 
-/* Hamburger menu for mobile */
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
 .bar {
     display: block;
     width: 25px;
@@ -304,8 +298,11 @@ ul {
 
     .hamburger {
         display: block;
+        cursor: pointer;
     }
 }
+
+@media (min-width: 769px) { .hamburger{ display: none; }}
 
 /* Add this to your main CSS file for mobile dropdowns */
 @media (max-width: 768px) {
