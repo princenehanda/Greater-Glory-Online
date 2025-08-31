@@ -109,6 +109,7 @@ ul {
     min-width: 200px;
     padding: 10px 0;
     border-top: 2px solid var(--primary-red);
+    z-index: 1000;
 }
 
 .has-dropdown:hover .dropdown {
@@ -119,6 +120,12 @@ ul {
     padding: 10px 20px;
     display: block;
     white-space: nowrap;
+    color: var(--primary-blue);
+    transition: background-color 0.3s ease;
+}
+
+.dropdown li a:hover {
+    background-color: var(--light-blue);
 }
 
 .cta-give a {
@@ -131,6 +138,25 @@ ul {
 
 .cta-give a:hover {
     background-color: #a30012;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 3px auto;
+    background-color: var(--primary-blue);
+    transition: all 0.3s ease-in-out;
 }
 
 /* Hero Slider */
@@ -255,68 +281,6 @@ ul {
     color: var(--white);
     text-align: center;
     padding: 2rem;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: var(--dark-grey);
-    transition: all 0.3s ease-in-out;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-    }
-
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 60px;
-        flex-direction: column;
-        background-color: var(--white);
-        width: 100%;
-        text-align: center;
-        transition: right 0.3s;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-item {
-        padding: 1rem 0;
-        border-bottom: 1px solid var(--light-grey);
-    }
-
-    .has-dropdown:hover .dropdown {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-}
-
-@media (min-width: 769px) { .hamburger{ display: none; }}
-
-/* Add this to your main CSS file for mobile dropdowns */
-@media (max-width: 768px) {
-    .dropdown {
-        display: none;
-        position: static;
-        box-shadow: none;
-        border-top: none;
-        background-color: var(--light-grey);
-    }
-
-    .dropdown.show {
-        display: block;
-    }
 }
 
 /* ======================================= */
@@ -635,222 +599,6 @@ ul {
 /* ======================================= */
 /* Give Page Styles        */
 /* ======================================= */
-/* Color Palette */
-:root {
-    --primary-red: #d20019;
-    --primary-blue: #002d62;
-    --light-blue: #e6f0ff;
-    --dark-grey: #333;
-    --light-grey: #f4f4f4;
-    --white: #fff;
-}
-
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: var(--primary-blue);
-    color: var(--white);
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-blue);
-}
-
-ul {
-    list-style: none;
-}
-
-/* Header & Navigation */
-.header {
-    background-color: rgba(230, 240, 255, 0.85);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo img {
-    height: 100px;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-blue);
-}
-
-@media (max-width: 768px) {
-    .logo img {
-        height: 50px;
-    }
-
-    .logo-text {
-        font-size: 1.2rem;
-    }
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-item a {
-    color: var(--primary-blue);
-    font-weight: bold;
-    padding: 10px 0;
-    transition: color 0.3s;
-}
-
-.nav-item a:hover {
-    color: var(--primary-red);
-}
-
-.has-dropdown {
-    position: relative;
-}
-
-.dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--white);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    min-width: 200px;
-    padding: 10px 0;
-    border-top: 2px solid var(--primary-red);
-}
-
-.has-dropdown:hover .dropdown {
-    display: block;
-}
-
-.dropdown li a {
-    padding: 10px 20px;
-    display: block;
-    white-space: nowrap;
-}
-
-.cta-give a {
-    background-color: var(--primary-red);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.cta-give a:hover {
-    background-color: #a30012;
-}
-
-/* Hamburger menu for mobile */
-.hamburger {
-    display: none;
-    cursor: pointer;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: var(--dark-grey);
-    transition: all 0.3s ease-in-out;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-    }
-
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 60px;
-        flex-direction: column;
-        background-color: var(--white);
-        width: 100%;
-        text-align: center;
-        transition: right 0.3s;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .nav-item {
-        padding: 1rem 0;
-        border-bottom: 1px solid var(--light-grey);
-    }
-
-    .has-dropdown:hover .dropdown {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
-
-/* Add this to your main CSS file for mobile dropdowns */
-@media (max-width: 768px) {
-    .dropdown {
-        display: none;
-        position: static;
-        box-shadow: none;
-        border-top: none;
-        background-color: var(--light-grey);
-    }
-
-    .dropdown.show {
-        display: block;
-    }
-}
-
-/* General Page Section Styles */
-.section {
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Footer */
-.footer {
-    background-color: var(--dark-grey);
-    color: var(--white);
-    text-align: center;
-    padding: 2rem;
-}
-
-/* ======================================= */
-/* Give Page Styles */
-/* ======================================= */
-
 .give-section {
     display: flex;
     flex-direction: column;
@@ -859,33 +607,6 @@ ul {
     min-height: 100vh;
     text-align: center;
     font-family: Arial, sans-serif;
-}
-
-.page-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--white);
-    position: relative;
-}
-
-.page-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background-color: var(--primary-red);
-}
-
-.section-description {
-    text-align: center;
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
-    color: #fff;
 }
 
 .give-options {
@@ -1149,6 +870,7 @@ ul {
     color: #2ecc71;
     margin-right: 5px;
 }
+
 /* Calendar styling for upcoming.html */
 .calendar-container {
     display: flex;
@@ -1193,6 +915,153 @@ ul {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     color: var(--dark-grey);
+}
+
+/* ======================================= */
+/* UPDATED MOBILE NAVIGATION STYLES       */
+/* ======================================= */
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 80px; /* Adjust based on your header height */
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: left;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-item {
+        padding: 0;
+        border-bottom: 1px solid var(--light-grey);
+    }
+
+    .nav-item > a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--primary-blue);
+        font-weight: bold;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        position: relative;
+    }
+
+    .nav-item > a:hover {
+        background-color: var(--light-blue);
+    }
+
+    /* Mobile Dropdown Styles */
+    .dropdown {
+        display: none; /* Hidden by default */
+        position: static;
+        box-shadow: none;
+        border-top: none;
+        background-color: #f8f9fa;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Show dropdown when mobile-show class is added */
+    .dropdown.mobile-show {
+        display: block !important;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .dropdown li {
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .dropdown li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown li a {
+        padding: 12px 40px; /* Extra left padding for indentation */
+        background-color: #f8f9fa;
+        color: #555;
+        font-weight: normal;
+        border: none;
+        font-size: 0.9em;
+    }
+
+    .dropdown li a:hover {
+        background-color: #e9ecef;
+        color: var(--primary-red);
+    }
+
+    /* Disable desktop hover on mobile */
+    .has-dropdown:hover .dropdown {
+        display: none;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Dropdown Toggle Indicator Styles */
+    .dropdown-toggle {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+        color: var(--primary-red);
+        font-weight: bold;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+}
+
+/* Slide down animation for mobile dropdowns */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 200px;
+    }
+}
+
+/* Ensure desktop functionality isn't affected */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+    
+    .dropdown.mobile-show {
+        display: none;
+    }
 }
 
 /* ======================================= */
