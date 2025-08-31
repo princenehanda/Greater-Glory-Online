@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    document.addEventListener('DOMContentLoaded', () => {
+
     // --- Mobile Navigation & Dropdowns ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
