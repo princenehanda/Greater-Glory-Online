@@ -1,193 +1,639 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Greater Glory Ministries</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+/* Color Palette */
+:root {
+    --primary-red: #d20019;
+    --primary-blue: #002d62;
+    --light-blue: #e6f0ff;
+    --dark-grey: #333;
+    --light-grey: #f4f4f4;
+    --white: #fff;
+}
 
-<header class="header">
-    <nav class="navbar">
-        <a href="../index.html" class="logo">
-            <img src="../assets/logo.png" alt="Greater Glory Ministries Logo">
-            <span class="logo-text">Greater Glory Ministries</span>
-        </a>
-        <ul class="nav-links">
-            <li class="nav-item has-dropdown">
-                <a href="About.html">About Us</a>
-                <ul class="dropdown">
-                    <li><a href="About.html#vision">Our vision and mission</a></li>
-                    <li><a href="About.html#who">Who we are</a></li>
-                    <li><a href="About.html#what">what to expect</a></li>
-                    <li><a href="About.html#pastors">Meet our Pastors </a></li>
-                    <li><a href="About.html#statements">Our Statement of Faith</a></li>
-                </ul>
-            </li>
-            <li class="nav-item has-dropdown">
-                <a href="#">I'm New</a>
-                <ul class="dropdown">
-                    <li><a href="salvation.html">Salvation</a></li>
-                    <li><a href="new-believers.html">New Believers</a></li>
-                    <li><a href="ggm-near-me.html">GGM Near Me</a></li>
-                    <li><a href="signin/auth.html">Sign up</a></li>
-                </ul>
-            </li>
-            <li class="nav-item has-dropdown">
-                <a href="#">Meetings</a>
-                <ul class="dropdown">
-                    <li><a href="pwpi.html">Pray with Us (PWPI)</a></li>
-                    <li><a href="miracle.html">Miracle Hour</a></li>
-                    <li><a href="upcoming.html">Upcoming Services</a></li>                   
-                </ul>
-            </li>
-            <li class="nav-item has-dropdown">
-                <a href="#">Get involved</a>
-                <ul class="dropdown">
-                    <li><a href="cell.html">Cell Ministry</a></li>
-                    <li><a href="serve.html">Departments</a></li>
-                    <li><a href="ministries.html">ministries</a></li>                    
-                </ul>
-            </li>
-            <li class="nav-item has-dropdown member-only" style="display: none;">
-                <a href="partner.html">Partner</a>
-                <ul class="dropdown">
-                    <li><a href="partner.html">Partnership Arms</a></li>
-                </ul>
-            </li>
-            <li class="nav-item media-link">
-                <a href="media.html">Media</a>
-            </li>
-            <li class="nav-item cta-give"><a href="give.html">Give</a></li>
-            
-            <li class="nav-item leader-only" style="display: none;"><a href="signin/leader-dashboard.html">Leader Portal</a></li>
-            <li class="nav-item admin-only" style="display: none;"><a href="signin/admin-dashboard.html">Admin Portal</a></li>
-            <li class="nav-item pastor-only" style="display: none;"><a href="signin/Pastor-dashboard.html">Pastor Portal</a></li>
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <li class="nav-item auth-action"><a href="signin/auth.html" id="loginBtn">Sign In</a></li>
-            <li class="nav-item auth-action" style="display: none;"><a href="#" id="logoutBtn">Logout</a></li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </nav>
-</header>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
 
-<main class="section">
-    <h1 class="page-title">About Us</h1>
-    <p class="section-description">Click on a card below to discover more about our church.</p>
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+}
 
-    <div class="card-grid">
-        <div class="card-container">
-            <div class="unified-card spinning-card" onclick="this.classList.toggle('flipped')">
-                <div class="card-front">
-                    <img src="../assets/about-hero.jpeg" alt="Who We Are" class="card-image">
-                    <div class="card-content">
-                        <h3>Who We Are</h3>
-                        <span class="view-details">Click to find out more</span>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div class="card-content">
-                        <h3>Who We Are</h3>
-                        <p>We are a vibrant, family-oriented church dedicated to raising a generation of believers who live a life of divine glory. Our foundation is built on the Word of God, and our mission is to make a global impact by spreading the Gospel of Jesus Christ to all nations.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+ul {
+    list-style: none;
+}
 
-        <div class="card-container">
-            <div class="unified-card spinning-card" onclick="this.classList.toggle('flipped')">
-                <div class="card-front">
-                    <img src="../assets/about-pastors.jpeg" alt="Meet Our Pastors" class="card-image">
-                    <div class="card-content">
-                        <h3>Meet Our Pastors</h3>
-                        <span class="view-details">Click to find out more</span>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div class="card-content">
-                        <h3>Meet Our Pastors</h3>
-                        <p>Greater Glory Ministries is led by our founder, Pastor Isaac, a dynamic and anointed man of God with a heart for people. Together with his wife, they lead our church family with passion, integrity, and a deep commitment to the truth of God’s Word.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+/* Header & Navigation */
+.header {
+    background-color: rgba(230, 240, 255, 0.85);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
 
-        <div class="card-container">
-            <div class="unified-card spinning-card" onclick="this.classList.toggle('flipped')">
-                <div class="card-front">
-                    <img src="../assets/about-hero.jpeg" alt="Our Vision and Mission" class="card-image">
-                    <div class="card-content">
-                        <h3>Our Vision & Mission</h3>
-                        <span class="view-details">Click to find out more</span>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div class="card-content">
-                        <h3>Our Vision & Mission</h3>
-                        <p>Our vision is to build a global community of believers walking in God’s glory. Our mission is to transform lives and communities through the power of the Holy Spirit, equipping every believer to fulfill their divine purpose.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="card-container">
-        <div class="unified-card spinning-card" onclick="this.classList.toggle('flipped')">
-            <div class="card-front">
-                <img src="../assets/about-hero.jpeg" alt="What to Expect" class="card-image">
-                <div class="card-content">
-                    <h3>What to Expect</h3>
-                    <span class="view-details">Click to find out more</span>
-                </div>
-            </div>
-            <div class="card-back">
-                <div class="card-content">
-                    <h3>What to Expect</h3>
-                    <p>At GGM, you'll find a welcoming family where everyone is valued. Enjoy vibrant worship, practical teaching, and opportunities to grow in faith.</p>
-                    <ul class="card-links">
-                        <li><a href="#" onclick="event.stopPropagation(); alert('Link clicked! This would normally navigate to: ggm-near-me.html');">Find a GGM near you</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--primary-blue);
+}
 
-        <div class="card-container">
-            <div class="unified-card spinning-card" onclick="this.classList.toggle('flipped')">
-                <div class="card-front">
-                    <img src="../assets/about-hero.jpeg" alt="Our Statement of Faith" class="card-image">
-                    <div class="card-content">
-                        <h3>Our Statement of Faith</h3>
-                        <span class="view-details">Click to find out more</span>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div class="card-content">
-                        <h3>Our Statement of Faith</h3>
-                        <p>We believe in the Holy Trinity, the authority of the Holy Bible, the deity of Jesus Christ, salvation by grace through faith, and the sanctifying power of the Holy Spirit. We affirm the spiritual unity of all believers in Christ Jesus as one universal church.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+.logo img {
+    height: 80px;
+}
 
-    </div>
-</main>
+.logo .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-blue);
+    text-decoration: none;
+}
 
-<footer class="footer">
-    <p>&copy; 2025 Greater Glory Ministries. All rights reserved.</p>
-</footer>
+@media (max-width: 768px) {
+    .logo img {
+        height: 50px;
+    }
 
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-<script src="../js/auth-control.js"></script>
-<script src="../js/script.js"></script>
-</body>
-</html>
+   .logo .logo-text {
+        font-size: 1.2rem;
+    }
+}
 
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item a {
+    color: var(--primary-blue);
+    font-weight: bold;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.nav-item a:hover {
+    color: var(--primary-red);
+}
+
+.has-dropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-width: 200px;
+    padding: 10px 0;
+    border-top: 2px solid var(--primary-red);
+    z-index: 1000;
+}
+
+.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+.dropdown li a {
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+    color: var(--primary-blue);
+    transition: background-color 0.3s ease;
+}
+
+.dropdown li a:hover {
+    background-color: var(--light-blue);
+}
+
+.cta-give a {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-give a:hover {
+    background-color: #a30012;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 3px auto;
+    background-color: var(--primary-blue);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hero Slider */
+.hero-slider {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide1 {
+    background-image: url('../assets/hero-1.jpeg');
+}
+
+.slide2 {
+    background-image: url('../assets/hero-2.jpeg');
+}
+
+.slide3 {
+    background-image: url('../assets/hero-3.jpeg');
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 2rem;
+}
+
+.overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* CTA buttons container */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Individual CTA button styles */
+.cta-buttons a {
+    background-color: var(--primary-red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.cta-buttons a:hover {
+    background-color: #a22020;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons a {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+.cta-buttons a:hover {
+    background-color: var(--primary-blue);
+}
+
+/* General Sections */
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-blue);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ======================================= */
+/* GLOBAL CARD STYLES (for all unified cards) */
+/* ======================================= */
+
+/* Page Title */
+.page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--white);
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: var(--primary-red);
+}
+
+/* Section Description (All pages) */
+.section-description {
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    color: #fff;
+}
+
+/* Grid Container - ALL VARIATIONS */
+.card-grid,
+.ministries-grid,
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Unified Card Style - ALL VARIATIONS */
+.unified-card,
+.location-card,
+.partnership,
+.department,
+.ministry-card,
+.media-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.unified-card:hover,
+.location-card:hover,
+.partnership:hover,
+.department:hover,
+.ministry-card:hover,
+.media-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Card Image - ALL VARIATIONS */
+.card-image,
+.ministry-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.unified-card:hover .card-image,
+.location-card:hover .card-image,
+.partnership:hover .card-image,
+.department:hover .card-image,
+.ministry-card:hover .ministry-img,
+.media-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+/* Card Content - ALL VARIATIONS */
+.card-content,
+.ministry-content {
+    padding: 1.5rem;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.card-content h3,
+.ministry-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-blue);
+}
+
+.card-content p,
+.ministry-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* View Details Link */
+.view-details {
+    display: inline-block;
+    color: var(--primary-red);
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary-red);
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.unified-card:hover .view-details,
+.location-card:hover .view-details,
+.partnership:hover .view-details,
+.department:hover .view-details {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+}
+
+/* ======================================= */
+/* Media Card Specific Styles (for media.html) */
+/* ======================================= */
+.media-card {
+    text-align: center;
+    padding: 2rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-icon {
+    font-size: 3rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+
+.media-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.media-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* ======================================= */
+/* ABOUT PAGE - ACCORDION STYLES */
+/* ======================================= */
+
+/* Override body background for About page */
+body:has(.about-accordion) {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.about-accordion {
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 60vh;
+}
+
+/* Hero section for when all accordions are closed */
+.accordion-hero {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+
+.accordion-hero.hidden {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.accordion-hero h2 {
+    color: #667eea;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.accordion-hero p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: white;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.accordion-item:nth-child(2) { animation-delay: 0.1s; }
+.accordion-item:nth-child(3) { animation-delay: 0.2s; }
+.accordion-item:nth-child(4) { animation-delay: 0.3s; }
+.accordion-item:nth-child(5) { animation-delay: 0.4s; }
+.accordion-item:nth-child(6) { animation-delay: 0.5s; }
+
+.accordion-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.accordion-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.accordion-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.accordion-header:hover::before {
+    left: 100%;
+}
+
+.accordion-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.accordion-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #ffffff;
+}
+
+.accordion-content.active {
+    max-height: 1000px;
+}
+
+.accordion-body {
+    padding: 30px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+.accordion-body h4 {
+    color: #667eea;
+    margin: 25px 0 15px 0;
+    font-size: 1.2rem;
+}
+
+.accordion-body p {
+    margin-bottom: 15px;
+}
+
+.accordion-body ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.accordion-body li {
+    margin-bottom: 8px;
+}
+
+.faith-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 4px solid #667eea;
+}
+
+.contact-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.pastor-highlight {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #f39c12;
+    margin: 20px 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================= */
