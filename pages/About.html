@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Greater Glory Ministries</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo.png" alt="Greater Glory Ministries Logo">
+            <span class="logo-text">Greater Glory Ministries</span>
+        </a>
+        <ul class="nav-links">
+            <li class="nav-item has-dropdown">
+                <a href="About.html">About Us</a>
+                <ul class="dropdown">
+                    <li><a href="About.html#vision">Our vision and mission</a></li>
+                    <li><a href="About.html#who">Who we are</a></li>
+                    <li><a href="About.html#what">what to expect</a></li>
+                    <li><a href="About.html#pastors">Meet our Pastors </a></li>
+                    <li><a href="About.html#statements">Our Statement of Faith</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+                <a href="#">I'm New</a>
+                <ul class="dropdown">
+                    <li><a href="salvation.html">Salvation</a></li>
+                    <li><a href="new-believers.html">New Believers</a></li>
+                    <li><a href="ggm-near-me.html">GGM Near Me</a></li>
+                    <li><a href="signin/auth.html">Sign up</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+                <a href="#">Meetings</a>
+                <ul class="dropdown">
+                    <li><a href="pwpi.html">Pray with Us (PWPI)</a></li>
+                    <li><a href="miracle.html">Miracle Hour</a></li>
+                    <li><a href="upcoming.html">Upcoming Services</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+                <a href="#">Get involved</a>
+                <ul class="dropdown">
+                    <li><a href="cell.html">Cell Ministry</a></li>
+                    <li><a href="serve.html">Departments</a></li>
+                    <li><a href="ministries.html">ministries</a></li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown member-only" style="display: none;">
+                <a href="partner.html">Partner</a>
+                <ul class="dropdown">
+                    <li><a href="partner.html">Partnership Arms</a></li>
+                </ul>
+            </li>
+            <li class="nav-item media-link">
+                <a href="media.html">Media</a>
+            </li>
+            <li class="nav-item cta-give"><a href="give.html">Give</a></li>
+
+            <li class="nav-item leader-only" style="display: none;"><a href="signin/leader-dashboard.html">Leader Portal</a></li>
+            <li class="nav-item admin-only" style="display: none;"><a href="signin/admin-dashboard.html">Admin Portal</a></li>
+            <li class="nav-item pastor-only" style="display: none;"><a href="signin/Pastor-dashboard.html">Pastor Portal</a></li>
+
+            <li class="nav-item auth-action"><a href="signin/auth.html" id="loginBtn">Sign In</a></li>
+            <li class="nav-item auth-action" style="display: none;"><a href="#" id="logoutBtn">Logout</a></li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+<main class="section">
+    <h1 class="page-title">About Us</h1>
+    <p class="section-description">Discover who we are, what we believe, and what you can expect when you join our church family.</p>
+
+    <div class="about-accordion">
+        <!-- Hero section for when all accordions are closed -->
+        <div class="accordion-hero" id="accordionHero">
+            <h2>Discover Our Church Family</h2>
+            <p>Click any section below to learn more about Greater Glory Ministries. Each section contains detailed information about who we are, what we believe, and how you can get involved.</p>
+        </div>
+
+        <!-- Who We Are -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>Who We Are</h3>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <p>We are a vibrant, family-oriented church dedicated to raising a generation of believers who live a life of divine glory. Our foundation is built on the Word of God, and our mission is to make a global impact by spreading the Gospel of Jesus Christ to all nations.</p>
+
+                    <p>At Greater Glory Ministries, we believe that every person has a divine purpose and calling. We create an environment where families can grow together in faith, where individuals can discover their God-given potential, and where the community can experience the transformative power of God's love.</p>
+
+                    <h4>Our Core Values:</h4>
+                    <ul>
+                        <li><strong>Family Unity</strong> - We prioritize building strong family relationships grounded in biblical principles</li>
+                        <li><strong>Biblical Foundation</strong> - Every aspect of our ministry is rooted in Scripture</li>
+                        <li><strong>Global Vision</strong> - We think beyond our local community to impact the world</li>
+                        <li><strong>Divine Glory</strong> - We seek to live lives that reflect God's glory in everything we do</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meet Our Pastors -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>Meet Our Pastors</h3>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <div class="pastor-highlight">
+                        <h4>Pastor Isaac - Senior Pastor & Founder</h4>
+                        <p>Greater Glory Ministries is led by our founder, Pastor Isaac, a dynamic and anointed man of God with a heart for people. His passion for the Gospel and commitment to biblical truth has shaped the foundation of our church.</p>
+                    </div>
+
+                    <p>Together with his wife, they lead our church family with passion, integrity, and a deep commitment to the truth of God's Word. Their leadership style is characterized by love, wisdom, and a genuine desire to see every member of the congregation flourish in their relationship with God.</p>
+
+                    <h4>Leadership Philosophy:</h4>
+                    <p>Our pastoral team believes in:</p>
+                    <ul>
+                        <li>Leading by example and living with integrity</li>
+                        <li>Empowering others to discover and fulfill their calling</li>
+                        <li>Creating an atmosphere of love, acceptance, and spiritual growth</li>
+                        <li>Building strong relationships within the church community</li>
+                        <li>Maintaining a heart for the lost and the hurting</li>
+                    </ul>
+
+                    <a href="ggm-near-me.html" class="contact-link">Connect with Our Pastors</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Vision & Mission -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>Our Vision & Mission</h3>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <h4>Our Vision</h4>
+                    <p>To build a global community of believers walking in God's glory, where every person experiences the fullness of their divine purpose and calling.</p>
+
+                    <h4>Our Mission</h4>
+                    <p>To transform lives and communities through the power of the Holy Spirit, equipping every believer to fulfill their divine purpose by:</p>
+                    <ul>
+                        <li>Preaching the uncompromised Word of God with power and demonstration</li>
+                        <li>Creating an environment where supernatural encounters with God are normal</li>
+                        <li>Raising leaders who will impact their communities and nations</li>
+                        <li>Building strong family units based on biblical principles</li>
+                        <li>Reaching every nation with the Gospel of Jesus Christ</li>
+                    </ul>
+
+                    <h4>Our Commitment</h4>
+                    <p>We are committed to excellence in everything we do, from our worship services to our community outreach programs. We believe that God deserves our very best, and we strive to honor Him in all aspects of ministry.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- What to Expect -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>What to Expect</h3>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <p>At GGM, you'll find a welcoming family where everyone is valued and loved. We believe that church should be a place where you can grow, connect, and discover your purpose in God.</p>
+
+                    <h4>During Our Services:</h4>
+                    <ul>
+                        <li><strong>Vibrant Worship</strong> - Experience passionate praise and worship that connects your heart to God</li>
+                        <li><strong>Practical Teaching</strong> - Receive biblical messages that apply to your daily life</li>
+                        <li><strong>Prayer and Ministry</strong> - Opportunities for personal prayer and spiritual ministry</li>
+                        <li><strong>Fellowship</strong> - Connect with other believers in a warm, friendly atmosphere</li>
+                    </ul>
+
+                    <h4>Opportunities to Grow:</h4>
+                    <ul>
+                        <li>Small group Bible studies and cell groups</li>
+                        <li>Ministry involvement and volunteer opportunities</li>
+                        <li>Leadership development programs</li>
+                        <li>Youth and children's programs</li>
+                        <li>Community outreach initiatives</li>
+                    </ul>
+
+                    <h4>First-Time Visitors:</h4>
+                    <p>If you're visiting for the first time, we'd love to welcome you personally. Come as you are - there's no dress code or special requirements. Our goal is to make you feel at home from the moment you walk through our doors.</p>
+
+                    <a href="ggm-near-me.html" class="contact-link">Find a GGM Near You</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Statement of Faith -->
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <h3>Our Statement of Faith</h3>
+                <span class="accordion-icon">▼</span>
+            </div>
+            <div class="accordion-content">
+                <div class="accordion-body">
+                    <p>Our beliefs are firmly rooted in the Holy Bible and align with evangelical Christian doctrine. We hold these truths as fundamental to our faith and practice:</p>
+
+                    <div class="faith-section">
+                        <h4>The Holy Trinity</h4>
+                        <p>We believe in one God eternally existing in three persons: Father, Son, and Holy Spirit. Each person of the Trinity is fully God, yet there is one God.</p>
+                    </div>
+
+                    <div class="faith-section">
+                        <h4>The Authority of Scripture</h4>
+                        <p>We believe the Holy Bible is the inspired, infallible, and authoritative Word of God. It is our final authority for faith and practice, completely trustworthy and sufficient for all spiritual needs.</p>
+                    </div>
+
+                    <div class="faith-section">
+                        <h4>The Deity of Jesus Christ</h4>
+                        <p>We believe that Jesus Christ is true God and true man, conceived of the Holy Spirit and born of the Virgin Mary. He lived a sinless life, died on the cross as a substitute for sinners, and rose bodily from the dead.</p>
+                    </div>
+
+                    <div class="faith-section">
+                        <h4>Salvation by Grace</h4>
+                        <p>We believe that salvation is by grace alone through faith alone in Christ alone. It is not by works but is a gift of God's grace to all who believe in Jesus Christ as their personal Savior.</p>
+                    </div>
+
+                    <div class="faith-section">
+                        <h4>The Holy Spirit</h4>
+                        <p>We believe in the person and work of the Holy Spirit, who indwells believers at the moment of salvation. The Holy Spirit empowers believers for Christian living and service, including the gifts of the Spirit for today.</p>
+                    </div>
+
+                    <div class="faith-section">
+                        <h4>The Church</h4>
+                        <p>We believe in the spiritual unity of all believers in Christ Jesus as one universal church. The local church is a congregation of baptized believers associated by covenant in the faith and fellowship of the Gospel.</p>
+                    </div>
+
+                    <div class="faith-section">
+                        <h4>Christian Living</h4>
+                        <p>We believe that Christians should live holy lives, separated from sin and dedicated to serving God. This includes regular worship, prayer, Bible study, fellowship, and service to others.</p>
+                    </div>
+
+                    <div class="faith-section">
+                        <h4>The Second Coming</h4>
+                        <p>We believe in the personal, visible return of Jesus Christ to earth and the resurrection of the dead. There will be a final judgment and eternal life for the righteous and eternal punishment for the wicked.</p>
+                    </div>
+
+                    <p style="margin-top: 30px; font-style: italic;">These fundamental beliefs guide our teaching, ministry, and fellowship at Greater Glory Ministries. We welcome all who share these biblical convictions to join us in worship and service.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 Greater Glory Ministries. All rights reserved.</p>
+</footer>
+
+<script type="module" src="js/script.js"></script>
+
+<script>
+function toggleAccordion(header) {
+    const item = header.parentElement;
+    const content = header.nextElementSibling;
+    const isActive = item.classList.contains('active');
+
+    // Hide hero section when any accordion opens
+    const hero = document.getElementById('accordionHero');
+
+    if (!isActive) {
+        hero.classList.add('hidden');
+    }
+
+    // Toggle current accordion
+    if (isActive) {
+        item.classList.remove('active');
+        content.classList.remove('active');
+
+        // Show hero if no accordions are open
+        setTimeout(() => {
+            const stillHasOpen = document.querySelectorAll('.accordion-item.active').length > 0;
+            if (!stillHasOpen) {
+                hero.classList.remove('hidden');
+            }
+        }, 100);
+    } else {
+        item.classList.add('active');
+        content.classList.add('active');
+    }
+}
+
+// Function to expand specific accordion section (for dropdown navigation)
+function expandAccordionSection(sectionId) {
+    const sectionMap = {
+        'vision': 2,      // Our Vision & Mission (3rd accordion)
+        'who': 0,         // Who We Are (1st accordion)
+        'what': 3,        // What to Expect (4th accordion)
+        'pastors': 1,     // Meet our Pastors (2nd accordion)
+        'statements': 4   // Our Statement of Faith (5th accordion)
+    };
+
+    const accordionIndex = sectionMap[sectionId];
+    if (accordionIndex !== undefined) {
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        const targetItem = accordionItems[accordionIndex];
+
+        if (targetItem && !targetItem.classList.contains('active')) {
+            const header = targetItem.querySelector('.accordion-header');
+            header.click();
+
+            // Scroll to the opened accordion
+            setTimeout(() => {
+                targetItem.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 300);
+        }
+    }
+}
+
+// Check URL hash on page load to auto-expand sections
+document.addEventListener('DOMContentLoaded', function() {
+    const hash = window.location.hash.substring(1); // Remove the #
+    if (hash) {
+        setTimeout(() => {
+            expandAccordionSection(hash);
+        }, 500);
+    }
+
+    // Listen for hash changes (when dropdown links are clicked)
+    window.addEventListener('hashchange', function() {
+        const newHash = window.location.hash.substring(1);
+        if (newHash) {
+            expandAccordionSection(newHash);
+        }
+    });
+});
+</script>
+</body>
+</html>

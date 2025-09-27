@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giving Form - Greater Glory Ministries</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/logo.png" alt="Greater Glory Ministries Logo">
+                <span class="logo-text">Greater Glory Ministries</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="centered-form-section">
+        <div class="form-container">
+            <div class="form-header">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Payment Successful!</h2>
+                <p>Please complete your details for our records</p>
+            </div>
+
+            <div id="transaction-info" class="transaction-info">
+                <!-- Transaction details will be populated by JavaScript -->
+            </div>
+
+            <form action="submit_form.php" method="POST" class="giving-form">
+                <!-- Hidden field to capture transaction data -->
+                <input type="hidden" name="transaction_id" id="transaction_id">
+                <input type="hidden" name="purpose" id="hidden_purpose">
+                <input type="hidden" name="amount" id="hidden_amount">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="purpose_display">Purpose of Donation</label>
+                    <input type="text" id="purpose_display" readonly>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Details
+                    </button>
+                </div>
+            </form>
+
+            <div class="form-footer">
+                <p><i class="fas fa-envelope"></i> A receipt will be sent to your email address</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const txId = urlParams.get('tx');
+        const purpose = urlParams.get('purpose');
+        const amount = urlParams.get('amount');
+
+        // Populate form fields
+        if (txId) {
+            document.getElementById('transaction_id').value = txId;
+            
+            // Show transaction info
+            const transactionInfo = document.getElementById('transaction-info');
+            transactionInfo.innerHTML = `
+                <div class="transaction-details">
+                    <h4>Transaction Details</h4>
+                    <p><strong>Transaction ID:</strong> ${txId}</p>
+                    ${amount ? `<p><strong>Amount:</strong> $${amount}</p>` : ''}
+                    <p><strong>Status:</strong> <span class="success">Completed</span></p>
+                </div>
+            `;
+        }
+
+        if (purpose) {
+            document.getElementById('hidden_purpose').value = purpose;
+            
+            // Convert purpose to readable format
+            const purposeMap = {
+                'tithes': 'Tithes & Offerings',
+                'partnership': 'Partnership',
+                'projects': 'Special Projects'
+            };
+            
+            document.getElementById('purpose_display').value = purposeMap[purpose] || purpose;
+        }
+
+        if (amount) {
+            document.getElementById('hidden_amount').value = amount;
+        }
+
+        // Handle form submission
+        document.querySelector('.giving-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                alert('Thank you! Your details have been submitted successfully. You will receive a confirmation email shortly.');
+                window.location.href = '../index.html';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
