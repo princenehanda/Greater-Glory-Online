@@ -79,42 +79,155 @@
 
 <main class="section">
     <h1 class="page-title">Upcoming Events</h1>
-    <p class="section-description">Join us for these weekly events and services. All times are Central Africa Time (CAT) unless otherwise specified.</p>
 
-    <div class="calendar-container">
-        <div class="calendar-event">
-            <h3>Daily Prayer</h3>
-            <p><strong>P.W.P.I. (Pray with Pastor Isaac)</strong></p>
-            <p>Daily at 04:00 CAT</p>
+    <!-- Featured Conference Section -->
+    <div class="featured-conference" id="featuredEvent">
+        <div class="conference-header">
+            <div class="dod-badge">Daughters of Destiny Presents</div>
+            <h2 class="conference-title">Ladies Aflame 2025</h2>
+            <p class="conference-subtitle">with PASTOR PEGGY</p>
         </div>
-        <div class="calendar-event">
-            <h3>Miracle Hour</h3>
-            <p><strong>Weekday Services</strong></p>
-            <p>Monday - Friday at 13:00 CAT</p>
+
+        <div id="eventCountdown">
+            <div class="countdown-container" id="countdownContainer">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">05</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
         </div>
-        <div class="calendar-event">
-            <h3>Friday Impact</h3>
-            <p><strong>Weekly Service</strong></p>
-            <p>Fridays at 18:00 CAT</p>
+
+        <div class="live-status" id="liveStatus">
+            <div class="live-indicator">
+                <i class="fas fa-circle" style="color: #ff0000;"></i>
+                LIVE NOW - Conference in Progress
+            </div>
         </div>
-        <div class="calendar-event">
-            <h3>Midweek Service</h3>
-            <p><strong>Weekly Service</strong></p>
-            <p>Wednesdays at 17:30 CAT</p>
+
+        <div class="conference-schedule">
+            <div class="schedule-day">
+                <div class="day-header">Friday - Opening Night</div>
+                <div class="schedule-item">
+                    <i class="fas fa-clock"></i>
+                    <span>5:30 PM CAT - Welcome & Worship</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-microphone"></i>
+                    <span>Keynote: "Igniting Your Purpose"</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-pray"></i>
+                    <span>Prayer & Impartation</span>
+                </div>
+            </div>
+            
+            <div class="schedule-day">
+                <div class="day-header">Saturday - Deep Dive</div>
+                <div class="schedule-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Morning Session - 9:00 AM CAT</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-users"></i>
+                    <span>Breakout Sessions</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Evening Session - 5:30 PM CAT</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Ministry & Testimonies</span>
+                </div>
+            </div>
+            
+            <div class="schedule-day">
+                <div class="day-header">Sunday - Send Off</div>
+                <div class="schedule-item">
+                    <i class="fas fa-clock"></i>
+                    <span>10:00 AM CAT - Final Session</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-gift"></i>
+                    <span>Commissioning & Blessing</span>
+                </div>
+                <div class="schedule-item">
+                    <i class="fas fa-hands"></i>
+                    <span>Closing Prayer</span>
+                </div>
+            </div>
         </div>
-        <div class="calendar-event">
-            <h3>Sunday Service</h3>
-            <p><strong>Weekly Service</strong></p>
-            <p>Sundays at 09:00 CAT</p>
+
+        <div class="conference-actions">
+            <a href="https://us02web.zoom.us/j/510329001?pwd=dXQydGd5V013SUZBanRabXBXSXh1Zz09" target="_blank" class="primary-action" id="joinButton">
+                <i class="fas fa-video"></i> Join Conference
+            </a>
+            <a href="https://wa.me/263778250529" target="_blank" class="secondary-action">
+                <i class="fab fa-whatsapp"></i> Get Support
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem; position: relative; z-index: 2;">
+            <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1rem; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <p><strong>Meeting ID:</strong> 510329001</p>
+                <p><strong>Passcode:</strong> 965672</p>
+                <p><em>For all women seeking spiritual transformation</em></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Regular Events Section -->
+    <div class="regular-events">
+        <h2 class="page-title" style="font-size: 2rem; margin-bottom: 1rem;">Regular Weekly Services</h2>
+        <p class="section-description" style="color: #ecf0f1;">Join us for these weekly events and services. All times are Central Africa Time (CAT) unless otherwise specified.</p>
+
+        <div class="calendar-container">
+            <div class="calendar-event">
+                <h3>Daily Prayer</h3>
+                <p><strong>P.W.P.I. (Pray with Pastor Isaac)</strong></p>
+                <p>Daily at 04:00 CAT</p>
+            </div>
+            <div class="calendar-event">
+                <h3>Miracle Hour</h3>
+                <p><strong>Weekday Services</strong></p>
+                <p>Monday - Friday at 13:00 CAT</p>
+            </div>
+            <div class="calendar-event">
+                <h3>Friday Impact</h3>
+                <p><strong>Weekly Service</strong></p>
+                <p>Fridays at 18:00 CAT</p>
+            </div>
+            <div class="calendar-event">
+                <h3>Midweek Service</h3>
+                <p><strong>Weekly Service</strong></p>
+                <p>Wednesdays at 17:30 CAT</p>
+            </div>
+            <div class="calendar-event">
+                <h3>Sunday Service</h3>
+                <p><strong>Weekly Service</strong></p>
+                <p>Sundays at 09:00 CAT</p>
+            </div>
         </div>
     </div>
 </main>
-
 <footer class="footer">
     <p>&copy; 2025 Greater Glory Ministries. All rights reserved.</p>
 </footer>
 
-<script type="module" src="js/script.js"></script>
+<script src="../js/timer.js"></script>
+<script type="module" src="../js/script.js"></script>
+
 </body>
 </html>
-
