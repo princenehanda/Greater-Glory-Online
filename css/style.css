@@ -117,7 +117,7 @@ ul {
 
 .logo .logo-text {
     font-size: 1.5rem;
-    font-weight: bold; 
+    font-weight: bold;
     text-decoration: none;
     white-space: nowrap; /* Prevent text wrapping */
     background: var(--nb-primary-gradient);
@@ -888,6 +888,210 @@ ul {
     }
 }
 
+
+/* ======================================= */
+/* CELL PAGE - SIGNIN STYLES */
+/* ======================================= */
+
+
+.auth-notice {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 10px;
+    text-align: center;
+    color: #856404;
+    font-size: 0.9em;
+}
+
+.auth-notice i {
+    margin-right: 5px;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    animation: slideIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+}
+
+/* Card animation CSS */
+.card-container {
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.spinning-card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.spinning-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.card-back .card-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-back h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.card-back p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.card-front .card-image {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.card-front .card-content {
+    padding: 15px;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spinning-card:hover {
+    transform: translateY(-5px);
+}
+
+.spinning-card.flipped:hover {
+    transform: rotateY(180deg) translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .spinning-card {
+        height: 250px;
+    }
+
+    .card-back .card-content {
+        padding: 15px;
+    }
+
+    .card-back h3 {
+        font-size: 1.3em;
+    }
+
+    .card-back p {
+        font-size: 0.8em;
+    }
+}
+</style>
+
+
 /* ======================================= */
 /* MOBILE RESPONSIVE STYLES */
 /* ======================================= */
@@ -1062,7 +1266,8 @@ ul {
     }
 }
 
-/* Video Highlight Section */
+
+ /* Video Highlight Section */
         .video-highlight-section {
             background: linear-gradient(135deg, #002d62 0%, #1a4b8c 50%, #e6f0ff 100%);
             padding: 3rem 2rem;
@@ -1679,9 +1884,3 @@ ul {
                 max-width: 280px;
             }
         }
-
-
-
-
-
-
