@@ -111,6 +111,58 @@
         </div>
     </section>
 
+    <section class="video-highlight-section" id="videoHighlight">
+        <div class="video-content-wrapper">
+            <div class="video-info">
+                <div class="event-badge" id="eventBadge">Featured Event</div>
+                <h2 id="eventTitle">Ladies Aflame 2025</h2>
+                <p id="eventDescription">Join the Daughters of Destiny for a powerful 3-day transformational conference. Experience worship, breakthrough sessions, and spiritual impartation that will ignite your purpose and destiny.</p>
+                
+                <div class="countdown-mini" id="miniCountdown">
+                    <div class="countdown-mini-item">
+                        <span class="countdown-mini-number" id="miniDays">00</span>
+                        <span class="countdown-mini-label">Days</span>
+                    </div>
+                    <div class="countdown-mini-item">
+                        <span class="countdown-mini-number" id="miniHours">00</span>
+                        <span class="countdown-mini-label">Hrs</span>
+                    </div>
+                    <div class="countdown-mini-item">
+                        <span class="countdown-mini-number" id="miniMinutes">00</span>
+                        <span class="countdown-mini-label">Min</span>
+                    </div>
+                </div>
+
+                <div class="video-actions">
+                    <a href="pages/upcoming.html" class="cta-primary" id="primaryAction">
+                        <i class="fas fa-calendar-plus"></i> View Details
+                    </a>
+                    <a href="https://us02web.zoom.us/j/510329001?pwd=dXQydGd5V013SUZBanRabXBXSXh1Zz09" target="_blank" class="cta-secondary" id="secondaryAction">
+                        <i class="fas fa-video"></i> Join Live
+                    </a>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div id="liveBadge" class="live-badge" style="display: none;">LIVE</div>
+                <div id="comingSoonBadge" class="coming-soon-badge">Coming Soon</div>
+                
+                <div class="video-placeholder" id="videoPlaceholder" style="display: none;">
+                    <i class="fas fa-play-circle"></i>
+                    <h3>Conference Highlight Reel</h3>
+                    <p>Experience the power and transformation</p>
+                </div>
+
+                <video id="conferenceVideo" width="100%" height="100%" controls>
+    <source src="assets/videos/lac25.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+               
+            </div>
+        </div>
+    </section>
+
+    
     <section class="section">
         <h2>Our DNA: Prayer, Worship, Word, Community</h2>
         <div class="card-container">
@@ -140,6 +192,7 @@
     <p>&copy; 2025 Greater Glory Ministries. All rights reserved.</p>
 </footer>
 
+<script src="js/timer.js"></script>
 <script type="module" src="js/script.js"></script>
 
 </body>
