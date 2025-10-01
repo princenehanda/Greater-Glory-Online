@@ -1,7 +1,3 @@
-// script.js
-import { registerUser, loginUser } from "./auth.js";
-import { monitorAuth, logoutUser } from "./auth-control.js";
-
 document.addEventListener('DOMContentLoaded', () => {
     // --- Hero Slideshow ---
     const slides = document.querySelectorAll('.hero-slider .slide');
@@ -22,25 +18,62 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(currentSlide);
     }
 
+    // --- Header Transparency on Scroll ---
+    function handleHeaderOnScroll() {
+        const header = document.querySelector('.header');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+                console.log('Scrolled - class added, scrollY:', window.scrollY);
+            } else {
+                header.classList.remove('scrolled');
+                console.log('Top - class removed, scrollY:', window.scrollY);
+            }
+        } else {
+            console.log('Header element not found!');
+        }
+    }
+
+    // Add the event listener to the window
+    window.addEventListener('scroll', handleHeaderOnScroll);
+    
+    // Check initial state
+    handleHeaderOnScroll();
+
     // --- Mobile Navigation & Dropdowns ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+
+    document.querySelectorAll('.has-dropdown > a').forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parentLi = this.parentElement;
+
+                parentLi.classList.toggle('active');
+
+                document.querySelectorAll('.has-dropdown.active').forEach(otherItem => {
+                    if (otherItem !== parentLi) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            }
+        });
+    });
 
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', (e) => {
             e.preventDefault();
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
-
-            document.querySelectorAll('.dropdown').forEach(dropdown => {
-                dropdown.classList.remove('mobile-show');
+            document.querySelectorAll('.has-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
             });
-
             console.log('Hamburger clicked, nav active:', navLinks.classList.contains('active'));
         });
 
         hamburger.addEventListener('touchstart', (e) => {
-             e.stopPropagation();
+            e.stopPropagation();
         });
 
         document.addEventListener('click', (e) => {
@@ -51,36 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Card Flip Functionality ---
-    document.addEventListener('click', function(e) {
-        const flipTrigger = e.target.closest('[data-flip-trigger]');
-
-        if (flipTrigger) {
-            const card = flipTrigger.closest('[data-flip-card]');
-
-            if (card) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Flip trigger clicked');
-                card.classList.toggle('flipped');
-                return;
-            }
-        }
-
-        if (e.target.tagName === 'A' || e.target.closest('a')) {
-            const link = e.target.tagName === 'A' ? e.target : e.target.closest('a');
-            console.log('Link clicked:', link.href);
-            return;
-        }
-    });
-
-    // --- Firebase Authentication Handling (New) ---
-
-    // Handle registration
+    // --- Firebase Authentication Handling ---
     document.getElementById("registerBtn")?.addEventListener("click", () => {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-
         registerUser(email, password)
             .then(userCredential => {
                 console.log("✅ User registered:", userCredential.user);
@@ -90,11 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     });
 
-    // Handle login
     document.getElementById("loginBtn")?.addEventListener("click", () => {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
-
         loginUser(email, password)
             .then(userCredential => {
                 console.log("✅ User logged in:", userCredential.user);
@@ -102,21 +107,5 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => {
                 console.error("❌ Login error:", error.message);
             });
-    });
-
-    // Monitor auth state changes
-    monitorAuth(user => {
-        if (user) {
-            console.log("👤 User is logged in:", user.email);
-        } else {
-            console.log("🚪 No user logged in");
-        }
-    });
-
-    // Handle logout
-    document.getElementById("logoutBtn")?.addEventListener("click", () => {
-        logoutUser()
-            .then(() => console.log("✅ User logged out"))
-            .catch(error => console.error("❌ Logout error:", error.message));
     });
 });
