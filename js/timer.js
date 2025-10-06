@@ -283,24 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         eventCountdown: !!eventCountdown
     });
     
-    // --- Hero Slideshow logic ---
-    const slides = document.querySelectorAll('.hero-slider .slide');
-    if (slides.length > 0) {
-        console.log('Initializing hero slideshow with', slides.length, 'slides');
-        let currentSlide = 0;
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
-        }
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-        setInterval(nextSlide, 5000);
-        showSlide(currentSlide);
-    }
-    
-    // --- Countdown Initialization ---
+   // --- Countdown Initialization ---
     if (miniCountdown) {
         console.log('Initializing mini countdown for index page');
         updateVideoHighlight(); // Run once immediately
