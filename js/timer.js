@@ -299,19 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextSlide, 5000);
         showSlide(currentSlide);
     }
-
-    // --- Mobile Navigation ---
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger && navLinks) {
-        console.log('Initializing mobile navigation');
-        hamburger.addEventListener('click', (e) => {
-            e.preventDefault();
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-    }
-
+    
     // --- Countdown Initialization ---
     if (miniCountdown) {
         console.log('Initializing mini countdown for index page');
